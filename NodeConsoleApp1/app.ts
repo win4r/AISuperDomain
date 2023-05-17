@@ -1,6 +1,22 @@
 import http from 'http';
 import { Parser } from 'htmlparser2';
 
+const parser = new htmlparser.Parser({
+    onopentag(name, attribs) {
+        if (name === 'a' && attribs.href) {
+            const href = attribs.href;
+            const protocol = /^https/.test(href) ? 'https://' : 'http://';
+            exec(`open ${protocol}${href.replace(/^(https|http):\/\//, '')}`); // Mac OS
+            // exec(`start ${protocol}${href.replace(/^(https|http):\/\//, '')}`); // Windows
+        }
+    }
+});
+
+https.get(options, function(res) {
+    res.pipe(parser);
+});
+
+
 http.get('http://poe.com', (res) => {
   let html = '';
 
