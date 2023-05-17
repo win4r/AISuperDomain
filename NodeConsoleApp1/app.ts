@@ -54,4 +54,22 @@ http.get(url, (res) => {
 }).on('error', (error) => {
   console.error('Error: ' + error);
 });
+const options = {
+    hostname: 'www.poe.com',
+    path: '/index.html',
+};
+
+const parser = new htmlparser.Parser({
+    onopentag(name, attribs) {
+        if (name === 'a' && attribs.href) {
+            exec(`open ${attribs.href}`); // Mac OS
+            // exec(`start ${attribs.href}`); // Window
+        }
+    }
+});
+
+http.get(options, function(res) {
+    res.pipe(parser);
+});
+
 
