@@ -4,6 +4,8 @@
  
  ## 作者微信：stoeng
 
+## 安装和登陆方式请看这里：https://www.youtube.com/watch?v=xoeHV1s7mho
+
 ### 一次提问能获得6款AI的同时回答，自带ChatGPT Claude Sage等现有AI
 
 ### 并且集成了AutoGPT和ChatGPT客户端
