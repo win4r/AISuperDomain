@@ -1,1 +1,1 @@
-https://github.com/win4r/AISuperDomain/releases/download/v2.1.1/v2.1.1.msix
+https://github.com/win4r/AISuperDomain/releases/download/v2.2/v2.2.2.msix
