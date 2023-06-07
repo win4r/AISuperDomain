@@ -2,11 +2,21 @@
 
  ## 哔哩哔哩频道：AI超元域
  
+ ## 抖音和西瓜频道：AI超元域
+ 
+ ## 微信视频号：AI超元域
+ 
+ ## 微信公众号：AI超元域
+ 
+ ## YouTube频道：AI超元域
+ 
  ## 作者微信：stoeng
 
 ## 安装和登陆方式请看这里：https://www.youtube.com/watch?v=xoeHV1s7mho
 
-### 一次提问能获得6款AI的同时回答，自带ChatGPT Claude Sage等现有AI
+### 一次提问能获得16款AI的同时回答，自带ChatGPT、Claude、Sage、Bard、bing AI、Bloom Chat等多款AI。
+
+### 可自定义不同AI来回答你的提问，自带双向翻译功能以解决英文不好的用户方便使用Bard等AI。
 
 ### 并且集成了AutoGPT和ChatGPT客户端
 
@@ -18,8 +28,4 @@
 
 
 ![image](https://user-images.githubusercontent.com/42172631/237026727-41db0f13-5c7c-4ceb-9014-9738432a6442.png)
-
-# 打赏开发者：
-
-![default](https://user-images.githubusercontent.com/42172631/237028447-25571233-8056-4338-b444-025b8ede34f1.jpg)
 
