@@ -4,6 +4,8 @@
  
  ## 作者微信：stoeng
 
+ ## 下载地址：https://github.com/win4r/AISuperDomain/releases
+
  ### 近期更新加入了通义千问、文心一言、天宫AI等国内ai，加入了全自动AI绘画功能，自带翻译和双向翻译等功能。
 
 ## 安装和登陆方式请看这里：https://www.youtube.com/watch?v=xoeHV1s7mho
