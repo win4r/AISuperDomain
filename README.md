@@ -22,7 +22,8 @@
 
 ### AutoGPT和ChatGPT客户端只需要openai的APIKeys即可使用
 
-
+![image](https://github.com/win4r/AISuperDomain/assets/42172631/2d7120ee-d877-4e0e-a5c5-9686e79b961e)
+![image](https://github.com/win4r/AISuperDomain/assets/42172631/c471c987-ff00-4ff2-8daa-1ea0b2c398ac)
 ![image](https://user-images.githubusercontent.com/42172631/237026727-41db0f13-5c7c-4ceb-9014-9738432a6442.png)
 ![image](https://github.com/win4r/AISuperDomain/assets/42172631/bf85725a-01d4-47bb-b9bb-ca8f8c2f5428)
 ![image](https://github.com/win4r/AISuperDomain/assets/42172631/558815ee-3318-44cf-b79e-796db7aeca80)
