@@ -6,11 +6,11 @@
 
  ## 下载地址：https://github.com/win4r/AISuperDomain/releases
 
- ### 近期更新加入了通义千问、文心一言、天宫AI等国内ai，加入了全自动AI绘画功能，自带翻译和双向翻译等功能。
+ ## 安装和登陆方式请看这里：https://www.youtube.com/watch?v=xoeHV1s7mho
 
-## 安装和登陆方式请看这里：https://www.youtube.com/watch?v=xoeHV1s7mho
+ ### 近期更新加入了通义千问、文心一言、天宫AI、智谱清言等国内ai，加入了全自动AI绘画功能，自带翻译和双向翻译以及Midjourney和stable diffusion提示词生成等功能。
 
-### 一次提问能获得16款AI的同时回答，自带ChatGPT、Claude、Sage、Bard、bing AI、Bloom Chat等多款AI。
+### 一次提问能获得20多款AI的同时回答，包含主流的ChatGPT、GPT4、Claude2、Sage、Bard、bing AI、Bloom Chat、Llama2、PaLM等多款AI。
 
 ### 可自定义不同AI来回答你的提问，自带双向翻译功能以解决英文不好的用户方便使用Bard等AI。
 
