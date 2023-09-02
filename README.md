@@ -6,7 +6,9 @@
 
  ## 下载地址：https://github.com/win4r/AISuperDomain/releases
 
- ## 安装和登陆方式请看这里：https://www.youtube.com/watch?v=xoeHV1s7mho
+ ## 完整版安装步骤：https://youtu.be/qZFIp4863No
+ 
+ ## 登陆方式请看这里：https://www.youtube.com/watch?v=xoeHV1s7mho
 
  ### 近期更新加入了Code-Llama-7b、Code-Llama-13b、Code-Llama-34b、通义千问、文心一言、天宫AI、智谱清言等国内ai，加入了全自动AI绘画功能，自带翻译和双向翻译以及Midjourney和stable diffusion提示词生成等功能。
 
