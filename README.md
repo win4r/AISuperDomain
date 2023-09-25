@@ -9,8 +9,6 @@
  ## 完整版安装步骤：https://youtu.be/qZFIp4863No
  
  ## 登陆方式请看这里：https://www.youtube.com/watch?v=xoeHV1s7mho
-
- ## telegram电报群：https://t.me/+xrLkCHCqS8c5ZDNl
  
  ### v5.0最新版重写了整个框架和部分UI界面，新增了多AI协作功能。
  ### 支持多AI协作的AI包括poe的所有AI和Bard官方版、Llama2官方版、Claude2官方版。
