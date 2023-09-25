@@ -10,11 +10,11 @@
  
  ## 登陆方式请看这里：https://www.youtube.com/watch?v=xoeHV1s7mho
  
- ### v5.0最新版重写了整个框架和部分UI界面，新增了多AI协作功能。
+ ### v5.5最新版重写了整个框架和部分UI界面，新增了多AI协作功能，加入了2窗口和4窗口互相切换的功能。
  ### 支持多AI协作的AI包括poe的所有AI和Bard官方版、Llama2官方版、Claude2官方版。
  ### 还新增了AI算命功能，此功能作为彩蛋集成在了软件里，如需此功的开启方式能请联系作者微信:stoeng
 
- ### 近期更新加入了Code-Llama-7b、Code-Llama-13b、Code-Llama-34b、通义千问、文心一言、天宫AI、智谱清言等国内ai，加入了全自动AI绘画功能，自带翻译和双向翻译以及Midjourney和stable diffusion提示词生成等功能。
+ ### 近期更新加入了Code-Llama-7b、Code-Llama-13b、Code-Llama-34b、Solar-0-70b、讯飞星火、抖音豆包、通义千问、文心一言、天宫AI、智谱清言等国内ai，加入了全自动AI绘画功能，自带翻译和双向翻译以及Midjourney和stable diffusion提示词生成等功能。
 
 ### 一次提问能获得20多款AI的同时回答，包含主流的ChatGPT、GPT4、Claude2、Sage、Bard、bing AI、Bloom Chat、Llama2、PaLM等多款AI，支持生成AI绘画提示词。
 
