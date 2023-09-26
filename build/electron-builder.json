@@ -1,0 +1,14 @@
+"directories": {
+    "output": "dist"
+},
+"win": {
+    "target": "nsis"
+},
+"nsis": {
+    "oneClick": false,
+    "allowElevation": true,
+    "allowToChangeInstallationDirectory": true,
+    "installerIcon": "build/icon.ico",
+    "uninstallerIcon": "build/icon.ico"
+}
+}

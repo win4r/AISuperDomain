@@ -1,0 +1,25 @@
+{
+  "name": "aisuperdomain",
+  "version": "1.0.0",
+  "description": "AISuperDomain",
+  "main": "main.js",
+  "scripts": {
+    "test": "test",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "build": "electron-builder",
+    "build:mac": "electron-builder --mac --x64"
+
+  },
+  "keywords": [
+    "aisuperdomain"
+  ],
+  "author": "ai",
+  "license": "ISC",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.1.1",
+    "electron": "^24.1.2"
+  },
+  "dependencies": {}
+}
