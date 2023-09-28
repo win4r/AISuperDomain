@@ -2,6 +2,13 @@
 
 AI超元域是一个开源的跨平台AI集成客户端，支持多AI同时回答以及多AI协作功能。
 
+## 资源链接：
+
+- **软件下载地址**：[GitHub Release](https://github.com/win4r/AISuperDomain/releases)
+- **完整版安装步骤**：[YouTube视频教程](https://youtu.be/qZFIp4863No)
+- **登陆方式教程**：[YouTube视频教程](https://www.youtube.com/watch?v=xoeHV1s7mho)
+
+
 ## 软件特色：
 
 - **多AI协作功能**：多AI协作的意思是不同AI之间的回答可以互相使用，只需点击"多AI协作"按钮即可轻松实现。支持包括poe在内的所有AI、Bard官方版、Llama2官方版、Claude2官方版在内的多种AI协作。
@@ -17,12 +24,6 @@ AI超元域是一个开源的跨平台AI集成客户端，支持多AI同时回�
 - **AI算命功能**：这是一个彩蛋功能，如需开启，请联系作者微信: stoeng。
 - **无需Python环境**：轻松使用，无需复杂的配置。
 - **跨平台**：支持Windows、macOS、Android这三大平台。iOS版将在近期发布。
-
-## 资源链接：
-
-- **软件下载地址**：[GitHub Release](https://github.com/win4r/AISuperDomain/releases)
-- **完整版安装步骤**：[YouTube视频教程](https://youtu.be/qZFIp4863No)
-- **登陆方式教程**：[YouTube视频教程](https://www.youtube.com/watch?v=xoeHV1s7mho)
 
 | 支持的AI | 说明 |
 | --- | --- |
