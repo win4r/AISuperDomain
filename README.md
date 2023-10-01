@@ -19,6 +19,7 @@ AI超元域是一个开源的跨平台AI集成客户端，支持多AI同时回�
 - **多AI协作功能**：多AI协作的意思是不同AI之间的回答可以互相使用，只需点击"多AI协作"按钮即可轻松实现。支持包括poe在内的所有AI、Bard官方版、Llama2官方版、Claude2官方版在内的多种AI协作。
 - **多AI支持**：支持所有常见AI如ChatGPT、Claude2、Bard以及Code-Llama-7b、Code-Llama-13b、Code-Llama-34b、Solar-0-70b、讯飞星火、抖音豆包、通义千问、文心一言、天宫AI、智谱清言等所有主流AI。
 - **多款AI同时回答**：一次提问可以获得20多款AI的同时回答，包含主流的ChatGPT、GPT4、Claude2、Sage、Bard、bing AI、Bloom Chat、Llama2、PaLM以及国内AI等。
+- **多AI绘画功能**：集成多款AI动绘画模型，支持stable diffusion XL模型。
 - **全自动AI绘画功能**：自带stable diffusion提示词生成和全自动绘画等功能。
 - **AI音乐生成功能**：自带AI音乐生成功能，可生成时长45秒的音乐。
 - **自定义提示词功能**：可自定义提示词，用斜线"/"即可切换不同提示词。
