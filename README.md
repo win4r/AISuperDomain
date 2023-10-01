@@ -41,6 +41,7 @@ AI超元域是一个开源的跨平台AI集成客户端，支持多AI同时回�
 | Code-Llama-13b | POE AI |
 | Code-Llama-34b | POE AI |
 | Solar-0-70b | POE AI |
+| stable diffusion XL | POE AI |
 | 讯飞星火 | 国内AI |
 | 抖音豆包 | 国内AI |
 | 通义千问 | 国内AI |
