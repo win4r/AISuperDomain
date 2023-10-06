@@ -28,7 +28,7 @@ AI超元域是一个开源的跨平台AI集成客户端，支持多AI同时回�
 - **可切换窗口数目**: 可以自定义窗体上显示的窗口数目，可设置为2个或者4个，从功能里的切换窗口即可设置。
 - **POE自动追加复制按钮**: 将POE里所有的AI都加入了复制按钮，能更加方便的复制AI的回答。
 - **集成AutoGPT和ChatGPT客户端**：只需要openai的APIKeys即可使用。
-- **AI算命功能**：这是一个彩蛋功能，如需开启，请联系作者微信: stoeng。
+- **AI算命功能**：这是一个彩蛋功能，请看下面的截图，如需开启，请联系作者微信: stoeng。
 - **无需Python环境**：轻松使用，无需复杂的配置。
 - **跨平台**：支持Windows、macOS、Android这三大平台。iOS版将在近期发布。
 
@@ -79,4 +79,5 @@ AI超元域是一个开源的跨平台AI集成客户端，支持多AI同时回�
 ![image](https://user-images.githubusercontent.com/42172631/237026727-41db0f13-5c7c-4ceb-9014-9738432a6442.png)
 ![image](https://github.com/win4r/AISuperDomain/assets/42172631/bf85725a-01d4-47bb-b9bb-ca8f8c2f5428)
 ![image](https://github.com/win4r/AISuperDomain/assets/42172631/558815ee-3318-44cf-b79e-796db7aeca80)
+![image](https://github.com/win4r/AISuperDomain/assets/42172631/f0be9d08-4155-4e1b-bcbd-8be8625644c7)
 
