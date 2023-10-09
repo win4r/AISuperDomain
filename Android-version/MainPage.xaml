@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AIMeta.MainPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <WebView x:Name="webview9"  />
+            <WebView x:Name="webview8"  />
+            <WebView x:Name="webview7"  />
+            <!--<WebView x:Name="webview6"  />-->
+            <WebView x:Name="webview5"  />
+            <!--<WebView x:Name="webview4"  />-->
+            <WebView x:Name="webview3"  />
+            <WebView x:Name="webview2"  />
+            <WebView x:Name="webview1"  />
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Editor x:Name="myEditor" Placeholder="请在这里输入内容..." AutoSize="TextChanges" Grid.Column="0"  />
+            <Button x:Name="sendButton" Text="发送" Clicked="ButtonSend_Clicked" Grid.Column="1" FontSize="Micro" />
+            <Button x:Name="switchButton" Text="切换AI" Clicked="ButtonSwitch_Clicked" Grid.Column="2" FontSize="Micro" />
+            <Button x:Name="switchGPT4Button" Text="GPT4" Clicked="ButtonGPT4Switch_Clicked" Grid.Column="3" FontSize="Micro" />
+
+        </Grid>
+    </Grid>
+
+</ContentPage>
