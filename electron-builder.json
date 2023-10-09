@@ -1,7 +1,0 @@
-{ 
-   "mac": { 
-       "category": "your.app.category", 
-       "icon": "path/to/your/icon.icns", 
-       "target": "dmg" 
-   } 
-}

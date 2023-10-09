@@ -1,0 +1,96 @@
+﻿<Window x:Class="AIIntegratorWV.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:webView2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        xmlns:local="clr-namespace:AIIntegratorWV"
+        mc:Ignorable="d"
+        Title="AI超元域v1.9 作者微信：stoeng  哔哩哔哩频道：AI超元域   【软件永久免费，poe会提示GPT4的7天试用期，可以直接忽略】" Height="650" Width="1150">
+    <!--哔哩哔哩频道：AI超元域   【软件永久免费，poe会提示GPT4的7天试用期，可以直接忽略】-->
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Border x:Name="panel" Background="LightGoldenrodYellow"  Grid.Row="0" Grid.Column="1" Visibility="Collapsed" Panel.ZIndex="100" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel>
+                <CheckBox x:Name="ckbPoeGPTClaude" IsChecked="True" Content="ChatGPT和Claude-instant" Background="#5d5cde" Foreground="Black" FontWeight="Bold" FontSize="16" />
+                <CheckBox x:Name="ckbPoeSageDragonfly" IsChecked="True" Content="Sage和Dragonfly" Background="#5d5cde" Foreground="Black" FontWeight="Bold" FontSize="16"/>
+                <CheckBox x:Name="ckbbingTwoMode" IsChecked="True" Content="Bing平衡模式和创意模式" Background="#5d5cde" Foreground="Black" FontWeight="Bold" FontSize="16"/>
+                <CheckBox x:Name="ckbBitoHugging" IsChecked="True" Content="Bito和HuggingChat" Background="#5d5cde" Foreground="Black" FontWeight="Bold" FontSize="16"/>
+                <CheckBox x:Name="ckbThebLmsys" IsChecked="True" Content="Theb和Lmsys" Background="#5d5cde" Foreground="Black" FontWeight="Bold" FontSize="16"/>
+                <CheckBox x:Name="ckbBingMirrorBard" IsChecked="True" Content="Bing镜像版和Bard" Background="#5d5cde" Foreground="Black" FontWeight="Bold" FontSize="16"/>
+                <Button x:Name="SvaeSettingButton"  Content="确定"  Click="SvaeSettingButton_Click" Background="#5d5cde" Foreground="White" Height="30" Width="100"/>
+            </StackPanel>
+        </Border>
+
+
+        <webView2:WebView2 x:Name="wvChatGPT" Grid.Row="0" Grid.Column="0" Source="https://poe.com/ChatGPT" />
+        <webView2:WebView2 x:Name="wvClaude" Grid.Row="0" Grid.Column="1" Source="https://poe.com/Claude"/>
+
+        <webView2:WebView2 x:Name="wvSage" Grid.Row="0" Grid.Column="0" Source="https://poe.com/Sage"/>
+        <webView2:WebView2 x:Name="wvDragonfly" Grid.Row="0" Grid.Column="1" Source="https://poe.com/Google-PaLM" />
+
+        <webView2:WebView2 x:Name="wvbingcreative" Grid.Row="0" Grid.Column="0" />
+        <webView2:WebView2 x:Name="wvbingbalance" Grid.Row="0" Grid.Column="1" />
+
+        <webView2:WebView2 x:Name="wvBito" Grid.Row="0" Grid.Column="0" />
+        <webView2:WebView2 x:Name="wvHugging" Grid.Row="0" Grid.Column="1" />
+
+        <webView2:WebView2 x:Name="wvTheb" Grid.Row="0" Grid.Column="0" />
+        <webView2:WebView2 x:Name="wvlmsys" Grid.Row="0" Grid.Column="1" />
+
+        <webView2:WebView2 x:Name="wvBingMirror" Grid.Row="0" Grid.Column="0" />
+        <webView2:WebView2 x:Name="wvBard" Grid.Row="0" Grid.Column="1" />
+
+        <webView2:WebView2 x:Name="wvAgentGPT" Grid.Row="0" Grid.Column="0" />
+        <webView2:WebView2 x:Name="wvAutoGPT" Grid.Row="0" Grid.Column="1" />
+
+        <webView2:WebView2 x:Name="wvGPT4" Grid.Row="0" Grid.Column="0" />
+        <webView2:WebView2 x:Name="wvClaudePlus" Grid.Row="0" Grid.Column="1" />
+
+        <webView2:WebView2 x:Name="wvFore" Grid.Row="0" Grid.Column="0" />
+        <webView2:WebView2 x:Name="wvOra" Grid.Row="0" Grid.Column="1"  />
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="txtMSG"  Grid.Column="0" Height="40" PreviewMouseDown="TextBox_PreviewMouseDown"  TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"  />
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+
+                <Button x:Name="SendButton" Grid.Column="1" Content="发送.." Click="SendButton_Click" Height="40" Width="80" Background="#5d5cde" Foreground="White" />
+
+                <ComboBox x:Name="myComboBox" SelectedIndex="0" SelectionChanged="myComboBox_SelectionChanged" Width="100" Height="30" >
+                    <ComboBoxItem Content="poeChatGPTClaude" Tag="poeChatGPTClaude" Background="#5d5cde" Foreground="White" />
+                    <ComboBoxItem Content="poeSageDragonfly" Tag="poeSageDragonfly" Background="#5d5cde" Foreground="White" />
+                    <ComboBoxItem Content="BingTwoMode" Tag="BingTwoMode" Background="#5d5cde" Foreground="White"/>
+                    <ComboBoxItem Content="BitoHugging" Tag="BitoHugging" Background="#5d5cde" Foreground="White"/>
+                    <ComboBoxItem Content="ThebLmsys" Tag="ThebLmsys" Background="#5d5cde" Foreground="White"/>
+                    <ComboBoxItem Content="BingMirrorBard" Tag="BingMirrorBard" Background="#5d5cde" Foreground="White"/>
+                </ComboBox>
+
+                <Button x:Name="SwitchButton" Grid.Column="1" Content="切换AI" Click="SwitchButton_Click"  Height="40" Width="80" Background="#5d5cde" Foreground="White"/>
+                <Button x:Name="GPT4Button" Grid.Column="1" Content="GPT4"   Height="40" Width="80" Background="#5d5cde" Foreground="White" Click="GPT4Button_Click"/>
+                <!--<Button x:Name="GPT4BardButton" Grid.Column="1" Content="GPT4 Bard" Click="GPT4BardButton_Click"  Height="40" Width="80" Background="#5d5cde" Foreground="White"/>-->
+                <Button x:Name="AutoGPTButton" Grid.Column="1" Content="AutoGPT" Click="AutoGPTButton_Click"  Height="40" Width="80" Background="#5d5cde" Foreground="White"/>
+                <Button x:Name="SettingButton" Grid.Column="1" Content="设置"   Height="40" Width="80" Background="#5d5cde" Foreground="White" Click="SettingButton_Click"/>
+
+                <!--<Button x:Name="GPTClientButton" Grid.Column="1" Content="GPT客户端" Click="GPTClientButton_Click"  Height="40" Width="80" Background="#5d5cde" Foreground="White"/>-->
+
+            </StackPanel>
+
+        </Grid>
+
+    </Grid>
+</Window>
