@@ -82,3 +82,8 @@ AI超元域是一个开源的跨平台AI集成客户端，支持多AI同时回�
 ![image](https://github.com/win4r/AISuperDomain/assets/42172631/f0be9d08-4155-4e1b-bcbd-8be8625644c7)
 ![image](https://github.com/win4r/AISuperDomain/assets/42172631/2395fcb5-ab21-4bf2-a741-59ff6d07e56b)
 
+## 请我喝咖啡
+
+![image](https://github.com/win4r/AISuperDomain/assets/42172631/8b35b7d8-ab3f-4f84-b314-03d8dace75fd)
+![image](https://github.com/win4r/AISuperDomain/assets/42172631/191f4ae8-2ad8-4415-87e2-a66814bc5fc9)
+
