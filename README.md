@@ -76,10 +76,12 @@ AI超元域是一个开源的跨平台AI集成客户端，支持多AI同时回�
 ![image](https://github.com/win4r/AISuperDomain/assets/42172631/540024ad-7a3d-4ffb-aef7-eb4a44a2331f)
 ![image](https://github.com/win4r/AISuperDomain/assets/42172631/2d7120ee-d877-4e0e-a5c5-9686e79b961e)
 ![image](https://github.com/win4r/AISuperDomain/assets/42172631/c471c987-ff00-4ff2-8daa-1ea0b2c398ac)
+![image](https://github.com/win4r/AISuperDomain/assets/42172631/1223e812-5a6a-40f6-a33b-c01d90b782fb)
+![image](https://github.com/win4r/AISuperDomain/assets/42172631/0a365086-a301-486f-b3f0-1b8e1157a491)
 ![image](https://user-images.githubusercontent.com/42172631/237026727-41db0f13-5c7c-4ceb-9014-9738432a6442.png)
 ![image](https://github.com/win4r/AISuperDomain/assets/42172631/bf85725a-01d4-47bb-b9bb-ca8f8c2f5428)
 ![image](https://github.com/win4r/AISuperDomain/assets/42172631/558815ee-3318-44cf-b79e-796db7aeca80)
-![image](https://github.com/win4r/AISuperDomain/assets/42172631/f0be9d08-4155-4e1b-bcbd-8be8625644c7)
+![image](https://github.com/win4r/AISuperDomain/assets/42172631/4b6c8c65-358b-4c42-9fd1-93ebca441e35)
 ![image](https://github.com/win4r/AISuperDomain/assets/42172631/2395fcb5-ab21-4bf2-a741-59ff6d07e56b)
 
 ## 请我喝咖啡
