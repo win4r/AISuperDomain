@@ -5,7 +5,6 @@ AI超元域是一个开源的跨平台AI集成客户端，支持多AI同时回�
 # 资源链接：
 
 - ### **软件下载地址**：https://github.com/win4r/AISuperDomain/releases
-- ### **从Google网盘下载**: https://drive.google.com/drive/folders/1zS4DWRrjdis95K-rhDM94Y0ogJuue_gu?usp=sharing
 - ### **完整版安装步骤**：https://youtu.be/qZFIp4863No
 - ### **登陆方式教程**：https://www.youtube.com/watch?v=xoeHV1s7mho
 
