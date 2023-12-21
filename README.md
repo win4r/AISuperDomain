@@ -2,6 +2,15 @@
 如需二次开发请使用rider/vscode/vs2022+.NET7
 欢迎参与开发与完善
 
+## 我的社交媒体频道：
+
+- 作者微信：stoeng
+- 哔哩哔哩频道：AI超元域
+- YouTube频道：AI超元域
+- 抖音：AI超元域
+- 微信视频号：AI超元域
+- 微信公众号：AI超元域
+
 # AI超元域开源软件使用简介
 
 AI超元域是一个开源的跨平台AI集成客户端，支持多AI同时回答以及多AI协作功能。
@@ -44,8 +53,8 @@ AI超元域是一个开源的跨平台AI集成客户端，支持多AI同时回�
 | Code-Llama-7b | POEAI |
 | Code-Llama-13b | POE AI |
 | Code-Llama-34b | POE AI |
-| Solar-0-70b | POE AI |
-| stable diffusion XL | POE AI |
+| Solar-0-70b | POE |
+| stable diffusion XL | POE |
 | 讯飞星火 | 国内AI |
 | 抖音豆包 | 国内AI |
 | 通义千问 | 国内AI |
@@ -61,17 +70,9 @@ AI超元域是一个开源的跨平台AI集成客户端，支持多AI同时回�
 | Bloom Chat | 官方AI |
 | Llama2 | 官方AI |
 | PaLM | google AI |
+| Gemini pro | google AI |
 | AutoGPT | 集成在客户端中 |
 | ChatGPT | 集成在客户端中 |
-
-## 社交媒体频道：
-
-- 哔哩哔哩频道：AI超元域
-- YouTube频道：AI超元域
-- 抖音：AI超元域
-- 微信视频号：AI超元域
-- 微信公众号：AI超元域
-- 作者微信：stoeng
 
 ## 软件截图如下：
 
