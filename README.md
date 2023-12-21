@@ -5,7 +5,6 @@ AI超元域是一个开源的跨平台AI集成客户端，支持多AI同时回�
 # 资源链接：
 
 - ### **软件下载地址**：https://github.com/win4r/AISuperDomain/releases
-- ### **从Google网盘下载**: https://drive.google.com/drive/folders/1zS4DWRrjdis95K-rhDM94Y0ogJuue_gu?usp=sharing
 - ### **完整版安装步骤**：https://youtu.be/qZFIp4863No
 - ### **登陆方式教程**：https://www.youtube.com/watch?v=xoeHV1s7mho
 
@@ -65,7 +64,7 @@ AI超元域是一个开源的跨平台AI集成客户端，支持多AI同时回�
 
 - 哔哩哔哩频道：AI超元域
 - YouTube频道：AI超元域
-- 抖音和西瓜频道：AI超元域
+- 抖音：AI超元域
 - 微信视频号：AI超元域
 - 微信公众号：AI超元域
 - 作者微信：stoeng
@@ -76,12 +75,11 @@ AI超元域是一个开源的跨平台AI集成客户端，支持多AI同时回�
 ![image](https://github.com/win4r/AISuperDomain/assets/42172631/540024ad-7a3d-4ffb-aef7-eb4a44a2331f)
 ![image](https://github.com/win4r/AISuperDomain/assets/42172631/2d7120ee-d877-4e0e-a5c5-9686e79b961e)
 ![image](https://github.com/win4r/AISuperDomain/assets/42172631/c471c987-ff00-4ff2-8daa-1ea0b2c398ac)
+![image](https://github.com/win4r/AISuperDomain/assets/42172631/1223e812-5a6a-40f6-a33b-c01d90b782fb)
+![image](https://github.com/win4r/AISuperDomain/assets/42172631/0a365086-a301-486f-b3f0-1b8e1157a491)
 ![image](https://user-images.githubusercontent.com/42172631/237026727-41db0f13-5c7c-4ceb-9014-9738432a6442.png)
 ![image](https://github.com/win4r/AISuperDomain/assets/42172631/bf85725a-01d4-47bb-b9bb-ca8f8c2f5428)
 ![image](https://github.com/win4r/AISuperDomain/assets/42172631/558815ee-3318-44cf-b79e-796db7aeca80)
-![image](https://github.com/win4r/AISuperDomain/assets/42172631/f0be9d08-4155-4e1b-bcbd-8be8625644c7)
+![image](https://github.com/win4r/AISuperDomain/assets/42172631/4b6c8c65-358b-4c42-9fd1-93ebca441e35)
 ![image](https://github.com/win4r/AISuperDomain/assets/42172631/2395fcb5-ab21-4bf2-a741-59ff6d07e56b)
 
-## 请我喝咖啡
-
-![image](https://github.com/win4r/AISuperDomain/assets/42172631/8569e948-a3a2-45ba-bab2-8f05d7cc0987)
