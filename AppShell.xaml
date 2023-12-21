@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AIIntegrator.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AIIntegrator"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent
+        Title="Ai超元域 v7.5 "
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+</Shell>
+
+<!--Ai超元域 v6.9 会员专享版(带免费GPT4)-->
+<!--👉哔哩哔哩：AI超元域      🤗软件永久免费-->
+<!-- 作者微信: stoeng 🤗  本软件完全免费， 👉我的哔哩哔哩：AI超元域 欢迎关注我的哔哩哔哩：AI超元域-->
