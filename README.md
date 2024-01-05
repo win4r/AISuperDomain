@@ -2,6 +2,9 @@
 如需二次开发请使用rider/vscode/vs2022+.NET7
 欢迎参与开发与完善
 
+## 我创建的GPTs项目：
+https://chat.openai.com/g/g-IlqQq6PIi-artful-rewriter
+
 ## 我的社交媒体频道：
 
 - 作者微信：stoeng
