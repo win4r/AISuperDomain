@@ -5,6 +5,9 @@
 ## 我创建的GPTs项目：
 https://chat.openai.com/g/g-IlqQq6PIi-artful-rewriter
 
+## 我创建的AI Agents项目：
+docker pull mustwin6699/fossaai:latest
+
 ## 我的社交媒体频道：
 
 - 作者微信：stoeng
