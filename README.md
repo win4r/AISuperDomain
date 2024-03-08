@@ -31,6 +31,8 @@ Aila currently supports the following AI models:
 ### Dynamic AI Display
 Customize your viewing experience by choosing how many AI responses to display simultaneously. Options include 1, 2, 3, 4, or 6 AI models, allowing flexibility in information presentation.
 
+![image](https://github.com/win4r/AISuperDomain/assets/42172631/3b8cead8-fe71-497a-aff0-f0dddca05eb1)
+
 ### Full-Screen Mode
 Click on an AI's name in the top-right corner to view its response in full screen, making it easier to focus on and read through. To return to the multi-AI display, simply click the "Home" button.
 
