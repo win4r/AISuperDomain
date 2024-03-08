@@ -1,3 +1,13 @@
+<div align="center">
+  <p><strong>Engage with Every Leading AI at Once, Uncover the Ultimate Insights</strong></p>
+
+ English | [简体中文](README_ZH-CN.md)
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/win4r/AISuperDomain/releases)
+
+</div>
+
+
 # Aila Desktop Application
 
 Welcome to the Aila Desktop Application GitHub repository! This innovative software integrates multiple leading AI models into a single desktop application, providing users with a powerful platform for generating diverse responses to their inquiries. Aila is designed to run seamlessly on both Windows and macOS systems, enabling users to interact with multiple artificial intelligences through one convenient interface.
