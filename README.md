@@ -1,7 +1,7 @@
 <div align="center">
   <p><strong>Engage with Every Leading AI at Once, Uncover the Ultimate Insights</strong></p>
 
- English | [简体中文](README_ZH-CN.md)
+ English | [简体中文](README_ZH-CN.md) | [繁體中文](README_ZH-TW.md)
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/win4r/AISuperDomain/releases)
 
