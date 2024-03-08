@@ -7,6 +7,8 @@
 
 </div>
 
+![image](https://github.com/win4r/AISuperDomain/assets/42172631/2115997d-8b00-4767-bf79-103b4e53abc3)
+
 
 # Aila Desktop Application
 
