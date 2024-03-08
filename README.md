@@ -34,6 +34,8 @@ Customize your viewing experience by choosing how many AI responses to display s
 ### Full-Screen Mode
 Click on an AI's name in the top-right corner to view its response in full screen, making it easier to focus on and read through. To return to the multi-AI display, simply click the "Home" button.
 
+![image](https://github.com/win4r/AISuperDomain/assets/42172631/36f0d4ac-ce52-44d8-a0b9-5362b3b9c46e)
+
 ### Efficient Interaction
 - **Prompt Suggestions**: Initiate a query with "/" to access a list of prompt suggestions, facilitating quicker engagement.
 - **Persistent Prompts**: Using "#" at the start of your input activates a persistent prompt, keeping it available for continuous use.
