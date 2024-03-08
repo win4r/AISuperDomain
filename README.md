@@ -44,6 +44,8 @@ Click on an AI's name in the top-right corner to view its response in full scree
 ### Customization and Configuration
 Access settings and customization options through the fly-out menu by clicking the top-left icon. Here, users can select their preferred AI models and adjust the display count. The "Config File" option leads to Aila's JSON configuration file, where users can add new AI models, modify prompts, and personalize their experience.
 
+![image](https://github.com/win4r/AISuperDomain/assets/42172631/30035e18-ce75-49ff-b385-f3895d8dd029)
+
 ## Getting Started
 
 To begin using Aila, download the latest version from [Aila Releases](https://github.com/win4r/AISuperDomain/releases). Follow the instructions below based on your operating system to ensure a smooth installation process.
