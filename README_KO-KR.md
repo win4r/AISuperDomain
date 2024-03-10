@@ -1,3 +1,15 @@
+<div align="center">
+  <p><strong>모든 주요 AI와 한 번에 접속하여 최종 통찰을 밝혀내다</strong></p>
+
+ [영어](README.md) | [简体中文](README_ZH-CN.md) | [繁體中文](README_ZH-TW.md) | [日本語](README_JA-JP.md) | 한국어 | [Français](README_FR-FR.md)
+
+[![GitHub Codespaces에서 열기](https://github.com/codespaces/badge.svg)](https://github.com/win4r/AISuperDomain/releases)
+
+</div>
+
+![이미지](https://github.com/win4r/AISuperDomain/assets/42172631/2115997d-8b00-4767-bf79-103b4e53abc3)
+
+
 # AI超元域 데스크탑 어플리케이션
 
 AI超元域 데스크탑 어플리케이션 GitHub 저장소에 오신 것을 환영합니다! 이 혁신적인 소프트웨어는 단일 데스크탑 어플리케이션으로 여러 선도적인 AI 모델을 통합하여 사용자가 질문에 대한 다양한 응답을 생성할 수 있는 강력한 플랫폼을 제공합니다. AI超元域은 Windows 및 macOS 시스템에서 원활하게 실행되도록 설계되어 사용자가 하나의 편리한 인터페이스를 통해 여러 인공지능과 상호 작용할 수 있습니다.
