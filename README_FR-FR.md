@@ -1,7 +1,7 @@
 <div align="center">
   <p><strong>Interagissez avec chaque IA leader en une fois, découvrez les insights ultimes</strong></p>
 
- [Anglais](README.md) | [简体中文](README_ZH-CN.md) | [繁體中文](README_ZH-TW.md) | [日本語](README_JA-JP.md) | [한국어](README_KO-KR.md) | Français
+ [English](README.md) | [简体中文](README_ZH-CN.md) | [繁體中文](README_ZH-TW.md) | [日本語](README_JA-JP.md) | [한국어](README_KO-KR.md) | Français
 
 [![Ouvrir dans GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/win4r/AISuperDomain/releases)
 
