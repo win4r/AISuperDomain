@@ -1,3 +1,15 @@
+<div align="center">
+  <p><strong>一度にすべての主要なAIと対話し、究極の洞察を明らかにする</strong></p>
+
+ [英語](README.md) | [简体中文](README_ZH-CN.md) | [繁體中文](README_ZH-TW.md) | 日本語 | [한국어](README_KO-KR.md) | [Français](README_FR-FR.md)
+
+[![GitHub Codespacesで開く](https://github.com/codespaces/badge.svg)](https://github.com/win4r/AISuperDomain/releases)
+
+</div>
+
+![画像](https://github.com/win4r/AISuperDomain/assets/42172631/2115997d-8b00-4767-bf79-103b4e53abc3)
+
+
 # AI超元域デスクトップアプリケーション
 
 AI超元域デスクトップアプリケーションのGitHubリポジトリへようこそ！この革新的なソフトウェアは、複数の主要なAIモデルを一つのデスクトップアプリケーションに統合し、ユーザーが様々な質問に対して多様な回答を生成するための強力なプラットフォームを提供します。AI超元域は、WindowsおよびmacOSシステム上でシームレスに動作するように設計されており、ユーザーが一つの便利なインターフェースを通じて複数の人工知能と対話できるようにします。
