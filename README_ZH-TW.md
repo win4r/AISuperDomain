@@ -1,3 +1,16 @@
+<div align="center">
+  <p><strong>一次提問，多個AI同時回答。
+</strong></p>
+
+ [英語](README.md) | [简体中文](README_ZH-CN.md) | 繁體中文 | [日本語](README_JA-JP.md) | [한국어](README_KO-KR.md) | [Français](README_FR-FR.md)
+
+[![在GitHub Codespaces中打開](https://github.com/codespaces/badge.svg)](https://github.com/win4r/AISuperDomain/releases)
+
+</div>
+
+![圖片](https://github.com/win4r/AISuperDomain/assets/42172631/2115997d-8b00-4767-bf79-103b4e53abc3)
+
+
 # AI超元域桌面應用
 
 歡迎來到AI超元域桌面應用的GitHub倉庫！這款創新的軟件集成了多個領先的AI模型於一體的桌面應用，為用戶提供了一個強大的平台，以產生多樣化的回應。AI超元域設計用於在Windows和macOS系統上無縫運行，使用戶能夠通過一個便捷的介面與多個人工智能進行互動。
