@@ -1,3 +1,14 @@
+<div align="center">
+  <p><strong>Interagissez avec chaque IA leader en une fois, découvrez les insights ultimes</strong></p>
+
+ [Anglais](README.md) | [简体中文](README_ZH-CN.md) | [繁體中文](README_ZH-TW.md) | [日本語](README_JA-JP.md) | [한국어](README_KO-KR.md) | Français
+
+[![Ouvrir dans GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/win4r/AISuperDomain/releases)
+
+</div>
+
+![image](https://github.com/win4r/AISuperDomain/assets/42172631/2115997d-8b00-4767-bf79-103b4e53abc3)
+
 # Application de bureau Aila
 
 Bienvenue sur le dépôt GitHub de l'application de bureau Aila ! Ce logiciel innovant intègre plusieurs modèles d'IA de pointe dans une seule application de bureau, offrant aux utilisateurs une plateforme puissante pour générer des réponses diversifiées à leurs questions. Aila est conçu pour fonctionner de manière transparente à la fois sur les systèmes Windows et macOS, permettant aux utilisateurs d'interagir avec plusieurs intelligences artificielles via une interface pratique.
