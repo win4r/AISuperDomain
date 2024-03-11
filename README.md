@@ -60,6 +60,17 @@ Windows users must ensure that their system has .NET 8 installed prior to instal
 
 Explore the settings within Aila to customize your AI experience to your liking.
 
+
+## Customize a script and add any AI
+
+You can start by locating the input box for AI, then use the browser's devtool to inspect the HTML of the input box element. Send the HTML to ChatGPT, and ask ChatGPT to write a generic script for you.
+<img width="1385" alt="Screenshot 2024-03-11 at 12 11 34 PM" src="https://github.com/win4r/AISuperDomain/assets/42172631/ee50b1b8-d80e-4e3a-a284-712dbb1d9398">
+
+
+You can refer to the steps and methods I used to ask ChatGPT, as shared in the link to our conversation.
+This step is based on the input box of POE (Path of Exile), allowing ChatGPT to provide a correct and usable script.
+https://chat.openai.com/share/e/aa565551-3e3f-4854-ae4b-75e652aa8d11
+
 ## Contributing
 
 Contributions to Aila are highly encouraged. Whether you have suggestions for new features, improvements, or bug fixes, please feel free to open an issue or submit a pull request.
