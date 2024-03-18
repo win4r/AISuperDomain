@@ -84,3 +84,9 @@ Aila Desktop Application is released under the MIT License. For more details, se
 For support or feedback, please contact us through the GitHub issues section of this repository. Your feedback is crucial for making Aila an even better tool for interacting with AI.
 
 Thank you for exploring Aila Desktop Application. We look forward to seeing the innovative ways you use this platform to enhance your AI interactions!
+
+<img src="https://github.com/win4r/AISuperDomain/assets/42172631/25e45d92-dd4d-41b4-99fe-2cfa1dd24524" width="93" height="150">
+<img src="https://github.com/win4r/AISuperDomain/assets/42172631/7568cf78-c8ba-4182-aa96-d524d903f2bc" width="93" height="150">
+<img src="https://github.com/win4r/AISuperDomain/assets/42172631/fefe535c-8153-4046-bfb4-e65eacbf7a33" width="93" height="150">
+
+
