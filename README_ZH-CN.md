@@ -67,3 +67,7 @@ AI超元域桌面应用在MIT许可证下发布。更多细节，请查看LICENS
 如需支持或反馈，请通过这个仓库的GitHub问题部分与我们联系。您的反馈对于让AI超元域成为一个更好的与AI互动的工具至关重要。
 
 感谢您探索AI超元域桌面应用。我们期待看到您使用这个平台以创新的方式增强您的AI互动体验！
+
+<img src="https://github.com/win4r/AISuperDomain/assets/42172631/25e45d92-dd4d-41b4-99fe-2cfa1dd24524" width="186" height="300">
+<img src="https://github.com/win4r/AISuperDomain/assets/42172631/7568cf78-c8ba-4182-aa96-d524d903f2bc" width="214.8" height="291">
+<img src="https://github.com/win4r/AISuperDomain/assets/42172631/fefe535c-8153-4046-bfb4-e65eacbf7a33" width="207" height="281">
