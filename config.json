@@ -128,90 +128,97 @@
     },
     {
       "id": 19,
+      "name": "Google AI Studio",
+      "url": "https://aistudio.google.com/app/prompts/new_chat",
+      "script": "function simulateInputChange(){const e=document.querySelector('#chat-input-field'),t='[message]';if(!e)return console.error('input not found');e.textContent=t;const n=new KeyboardEvent('keydown',{key:'Enter',bubbles:!0}),c=new KeyboardEvent('keyup',{key:'Enter',bubbles:!0});e.dispatchEvent(n),e.dispatchEvent(c),setTimeout(()=>{document.querySelector('[aria-label=\"Run\"]').click(),setTimeout(()=>{e.textContent=''},500)},500)}simulateInputChange();",
+      "iniScript": ""
+    },
+    {
+      "id": 20,
       "name": "AI Playground",
       "url": "https://sdk.vercel.ai/",
       "script": "(function(){const input=document.querySelector('textarea[placeholder=\"Send a message\"]'),newValue='[message]';if(!input){return console.error('Textarea not found');}const nativeInputValueSetter=Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype,\"value\").set;nativeInputValueSetter.call(input,newValue);const inputEvent=new Event('input',{bubbles:true});input.dispatchEvent(inputEvent);setTimeout(()=>{const keydownEvent=new KeyboardEvent('keydown',{bubbles:true,cancelable:true,keyCode:13,key:'Enter',code:'Enter',shiftKey:false});input.dispatchEvent(keydownEvent);},500);})();",
       "iniScript": ""
     },
     {
-      "id": 20,
+      "id": 21,
       "name": "Pi Ai",
       "url": "https://pi.ai/talk",
       "script": "(function(){const a=document.querySelector('textarea[placeholder=\"Talk with Pi\"]');if(!a){console.error('Textarea not found');return;}const b=\"[message]\",c=Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype,\"value\").set;c.call(a,b);const d=new Event('input',{bubbles:true});a.dispatchEvent(d);setTimeout(()=>{const e=document.querySelector('button[aria-label=\"Submit text\"]');e?e.click():console.error('Send button not found');},500);})();",
       "iniScript": ""
     },
     {
-      "id": 21,
+      "id": 22,
       "name": "devin ai",
       "url": "https://preview.devin.ai/",
       "script": "(function(){const a=document.querySelector('textarea[placeholder=\"Give Devin a task to work on ...\"]');if(!a){console.error('Textarea not found');return;}const b=\"This is a simulated message\",c=Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype,\"value\").set;c.call(a,b);a.dispatchEvent(new Event('input',{bubbles:true}));setTimeout(()=>{a.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',bubbles:true}));},500);})();",
       "iniScript": ""
     },
     {
-      "id": 22,
+      "id": 23,
       "name": "together-Qwen(通义千问)",
       "url": "https://api.together.xyz/playground/chat/Qwen/Qwen1.5-72B-Chat",
       "script": "(function simulateInputChangeAndEnter() { const input = document.querySelector('textarea[data-cy=\"input-textarea\"]'); const newValue = '[message]'; if (!input) { return console.error('Textarea not found'); } const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, \"value\").set; nativeInputValueSetter.call(input, newValue); const inputEvent = new Event('input', { bubbles: true }); input.dispatchEvent(inputEvent); setTimeout(() => { const keydownEvent = new KeyboardEvent('keydown', { bubbles: true, cancelable: true, keyCode: 13, key: 'Enter', code: 'Enter', shiftKey: false }); input.dispatchEvent(keydownEvent); }, 500); })();",
       "iniScript": ""
     },
     {
-      "id": 23,
+      "id": 24,
       "name": "doubao(豆包)",
       "url": "https://www.doubao.com/chat/",
       "script": "(function(){ let a=document.querySelector('div#root textarea'),b=Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype,'value').set;b.call(a,'[message]');a.dispatchEvent(new Event('input',{ bubbles:true }));a.dispatchEvent(new KeyboardEvent('keydown',{ bubbles:true,key:'Enter',keyCode:13 })); })();",
       "iniScript": ""
     },
     {
-      "id": 24,
+      "id": 25,
       "name": "CharacterAI",
       "url": "https://beta.character.ai/chats",
       "script": "(function(){let a=document.querySelector('textarea'),b=Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype,\"value\").set;b.call(a,'[message]');let c=new Event('input',{bubbles:true});a.dispatchEvent(c);let d=new KeyboardEvent('keydown',{bubbles:true,key:'Enter',keyCode:13});a.dispatchEvent(d);})();document.querySelector('.aspect-square.h-10').click();",
       "iniScript": ""
     },
     {
-      "id": 25,
+      "id": 26,
       "name": "Poe-Photo_CreateE(Image)",
       "url": "https://poe.com/Photo_CreateE",
       "script": "((textarea = document.querySelector('textarea'), lastValue = textarea.value, textarea.value = '[message]', inputEvent = new Event('input', {bubbles: true }), inputEvent.simulated = true, tracker = textarea._valueTracker, tracker ? tracker.setValue(lastValue) : void 0, textarea.dispatchEvent(inputEvent), enterKeyEvent = new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true }), textarea.dispatchEvent(enterKeyEvent)));",
       "iniScript": ""
     },
     {
-      "id": 26,
+      "id": 27,
       "name": "Poe-Image_Creators(Image)",
       "url": "https://poe.com/Image_Creators",
       "script": "((textarea = document.querySelector('textarea'), lastValue = textarea.value, textarea.value = '[message]', inputEvent = new Event('input', {bubbles: true }), inputEvent.simulated = true, tracker = textarea._valueTracker, tracker ? tracker.setValue(lastValue) : void 0, textarea.dispatchEvent(inputEvent), enterKeyEvent = new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true }), textarea.dispatchEvent(enterKeyEvent)));",
       "iniScript": ""
     },
     {
-      "id": 27,
+      "id": 28,
       "name": "Poe-StableDiffusionXL(Image)",
       "url": "https://poe.com/StableDiffusionXL",
       "script": "((textarea = document.querySelector('textarea'), lastValue = textarea.value, textarea.value = '[message]', inputEvent = new Event('input', {bubbles: true }), inputEvent.simulated = true, tracker = textarea._valueTracker, tracker ? tracker.setValue(lastValue) : void 0, textarea.dispatchEvent(inputEvent), enterKeyEvent = new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true }), textarea.dispatchEvent(enterKeyEvent)));",
       "iniScript": ""
     },
     {
-      "id": 28,
+      "id": 29,
       "name": "Poe-Playground(Image)",
       "url": "https://poe.com/Playground-v2.5",
       "script": "((textarea = document.querySelector('textarea'), lastValue = textarea.value, textarea.value = '[message]', inputEvent = new Event('input', {bubbles: true }), inputEvent.simulated = true, tracker = textarea._valueTracker, tracker ? tracker.setValue(lastValue) : void 0, textarea.dispatchEvent(inputEvent), enterKeyEvent = new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true }), textarea.dispatchEvent(enterKeyEvent)));",
       "iniScript": ""
     },
     {
-      "id": 29,
+      "id": 30,
       "name": "Poe-Photo-Realism(Image)",
       "url": "https://poe.com/Photo-Realism",
       "script": "((textarea = document.querySelector('textarea'), lastValue = textarea.value, textarea.value = '[message]', inputEvent = new Event('input', {bubbles: true }), inputEvent.simulated = true, tracker = textarea._valueTracker, tracker ? tracker.setValue(lastValue) : void 0, textarea.dispatchEvent(inputEvent), enterKeyEvent = new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true }), textarea.dispatchEvent(enterKeyEvent)));",
       "iniScript": ""
     },
     {
-      "id": 30,
+      "id": 31,
       "name": "Meta image(Image)",
       "url": "https://imagine.meta.com/",
       "script": "(function() { let textarea = document.querySelector('textarea'); let nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, \"value\").set; nativeInputValueSetter.call(textarea, '[message]'); let inputEvent = new Event('input', { bubbles: true }); textarea.dispatchEvent(inputEvent); let enterEvent = new KeyboardEvent('keydown', { bubbles: true, key: 'Enter', keyCode: 13 }); textarea.dispatchEvent(enterEvent); })();",
       "iniScript": ""
     },
     {
-      "id": 31,
+      "id": 32,
       "name": "playground.ai(Image)",
       "url": "https://ui.playground.ai/",
       "script": "(function(){const textArea=Array.from(document.querySelectorAll('textarea')).find(el=>el.placeholder===\"Type a message...\");if(!textArea){console.error('Textarea not found');return;}const message='[message]';const nativeInputValueSetter=Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype,\"value\").set;nativeInputValueSetter.call(textArea,message);const inputEvent=new Event('input',{bubbles:true});textArea.dispatchEvent(inputEvent);const sendButton=document.querySelector('.search-btn');if(!sendButton){console.error('Send button not found');return;}setTimeout(()=>{sendButton.click();},500);})();",
