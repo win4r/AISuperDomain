@@ -21,12 +21,29 @@ Aila sets itself apart by allowing users to pose a question and receive simultan
 
 ### Supported AI Models
 Aila currently supports the following AI models:
-- **ChatGPT**: Renowned for its conversational abilities and extensive knowledge base.
-- **Gemini**: Known for its creative problem-solving capabilities.
-- **Claude**: Distinguished by its concise and precise responses, providing a unique analytical perspective.
-- **Copilot**: A go-to resource for coding assistance and technical advice.
-- **Poe**: Specializes in creative and imaginative responses, adding a flair of creativity.
-- **Perplexity**: Focuses on delivering detailed and clear answers, enhancing understanding and clarity.
+| AI Name            | Introduction |
+|--------------------|--------------|
+| ChatGPT            | An AI developed by OpenAI, known for generating human-like text based on the input provided. |
+| Gemini             | A versatile AI capable of performing a variety of tasks, including language translation and data analysis. |
+| Claude             | An AI designed for conversational engagement, providing responses that can mimic human dialogue. |
+| Copilot            | Your AI companion that helps you navigate information and perform tasks across various domains. |
+| Poe                | An AI that specializes in creating poetic content and assisting with literary tasks. |
+| Perplexity         | An AI that focuses on answering complex questions with detailed explanations. |
+| HuggingChat        | An AI built on the Hugging Face platform, known for its natural language processing capabilities. |
+| YouAI              | A personalized AI that tailors its responses and recommendations to the individual user's preferences. |
+| lmsyshat           | An AI with capabilities in system administration and IT support, providing technical assistance. |
+| Gemini Pro 1.5     | An advanced version of Gemini, offering enhanced performance and additional features. |
+| Together AI        | An AI that facilitates collaboration and teamwork through shared tasks and project management tools. |
+| Grok AI            | An AI that excels in pattern recognition and data interpretation, often used in analytics. |
+| ai playground      | A platform for experimenting with different AI models and exploring their functionalities. |
+| PI AI              | An AI that specializes in personal intelligence, helping users manage their personal data securely. |
+| Devin AI           | An AI that provides development and coding assistance, streamlining the software development process. |
+| Tongyi Qianwen     | An AI focused on unifying diverse data sources to provide comprehensive insights. |
+| DouBao AI          | An AI that offers financial analysis and predictions, commonly used in the fintech sector. |
+| ChatGLM            | An AI that generates text based on generative language models, suitable for various applications. |
+| character ai       | An AI that creates character profiles and narratives for storytelling and gaming purposes. |
+| meta image generator | An AI that generates images based on textual descriptions, often used for creative projects. |
+| Suno AI            | An AI that composes music and generates songs based on user input, enhancing musical creativity. |
 
 ### Dynamic AI Display
 Customize your viewing experience by choosing how many AI responses to display simultaneously. Options include 1, 2, 3, 4, or 6 AI models, allowing flexibility in information presentation.
