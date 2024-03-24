@@ -85,7 +85,7 @@ For support or feedback, please contact us through the GitHub issues section of 
 
 Thank you for exploring Aila Desktop Application. We look forward to seeing the innovative ways you use this platform to enhance your AI interactions!
 
-<img src="https://github.com/win4r/AISuperDomain/assets/42172631/ae792ec6-6553-4b0a-b85b-d82671ff2aa9" width="186" height="300">
+<img src="https://raw.githubusercontent.com/win4r/AISuperDomain/main/Resources/IMG_0541.JPG" width="186" height="300">
 <img src="https://github.com/win4r/AISuperDomain/assets/42172631/7568cf78-c8ba-4182-aa96-d524d903f2bc" width="214.8" height="291">
 <img src="https://github.com/win4r/AISuperDomain/assets/42172631/fefe535c-8153-4046-bfb4-e65eacbf7a33" width="207" height="281">
 
