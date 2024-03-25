@@ -20,12 +20,31 @@ Aila se distingue en permettant aux utilisateurs de poser une question et de rec
 
 ### Modèles d'IA pris en charge
 Aila prend actuellement en charge les modèles d'IA suivants :
-- **ChatGPT** : Réputé pour ses capacités conversationnelles et sa vaste base de connaissances.
-- **Gemini** : Connu pour ses capacités de résolution de problèmes créatifs.
-- **Claude** : Distingué par ses réponses concises et précises, offrant une perspective analytique unique.
-- **Copilot** : Une ressource incontournable pour l'assistance au codage et les conseils techniques.
-- **Poe** : Spécialisé dans les réponses créatives et imaginatives, ajoutant une touche de créativité.
-- **Perplexity** : Se concentre sur la fourniture de réponses détaillées et claires, améliorant la compréhension et la clarté.
+
+| Nom de l'IA       | Introduction |
+|-------------------|--------------|
+| ChatGPT           | Un IA développé par OpenAI, connu pour générer du texte semblable à celui d'un humain basé sur l'entrée fournie. |
+| Gemini            | Un IA polyvalent capable d'effectuer une variété de tâches, y compris la traduction de langues et l'analyse de données. |
+| Claude            | Un IA conçu pour l'engagement conversationnel, fournissant des réponses pouvant imiter le dialogue humain. |
+| Copilot           | Votre compagnon IA qui vous aide à naviguer dans l'information et à effectuer des tâches dans divers domaines. |
+| Poe               | Un agrégateur de chatbots IA avancé pour des conversations fluides et la génération de contenu. |
+| Perplexity        | Un IA qui se concentre sur la réponse à des questions complexes avec des explications détaillées. |
+| HuggingChat       | Un IA construit sur la plateforme Hugging Face, connu pour ses capacités de traitement du langage naturel. |
+| YouAI             | Un IA personnalisé qui adapte ses réponses et recommandations aux préférences de l'utilisateur individuel. |
+| lmsyshat          | Un IA avec des capacités en administration système et support IT, fournissant une assistance technique. |
+| Gemini Pro 1.5    | Une version avancée de Gemini, offrant des performances améliorées et des fonctionnalités supplémentaires. |
+| Together AI       | Un IA qui facilite la collaboration et le travail d'équipe à travers des tâches partagées et des outils de gestion de projet. |
+| Grok AI           | Un IA qui excelle dans la reconnaissance de motifs et l'interprétation de données, souvent utilisé dans l'analytique. |
+| ai playground     | Une plateforme pour expérimenter avec différents modèles d'IA et explorer leurs fonctionnalités. |
+| PI AI             | Un IA qui se spécialise dans l'intelligence personnelle, aidant les utilisateurs à gérer leurs données personnelles de manière sécurisée. |
+| Devin AI          | Un IA qui fournit de l'assistance au développement et à la codification, rationalisant le processus de développement logiciel. |
+| Tongyi Qianwen    | Un IA concentré sur l'unification de diverses sources de données pour fournir des aperçus complets. |
+| DouBao AI         | Un IA qui offre des analyses et prédictions financières, couramment utilisé dans le secteur de la fintech. |
+| ChatGLM           | Un IA qui génère du texte basé sur des modèles de langage génératif, adapté pour diverses applications. |
+| character ai      | Un IA qui crée des profils de personnages et des récits pour le storytelling et les jeux. |
+| meta image generator | Un IA qui génère des images basées sur des descriptions textuelles, souvent utilisé pour des projets créatifs. |
+| Suno AI           | Un IA qui compose de la musique et génère des chansons basées sur l'entrée de l'utilisateur, améliorant la créativité musicale. |
+
 
 ### Affichage dynamique des IA
 Personnalisez votre expérience de visualisation en choisissant le nombre de réponses d'IA à afficher simultanément. Les options incluent 1, 2, 3, 4 ou 6 modèles d'IA, permettant une flexibilité dans la présentation des informations.
