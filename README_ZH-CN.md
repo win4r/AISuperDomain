@@ -87,6 +87,11 @@ AI超元域桌面应用在MIT许可证下发布。更多细节，请查看LICENS
 
 感谢您探索AI超元域桌面应用。我们期待看到您使用这个平台以创新的方式增强您的AI互动体验！
 
-<img src="https://github.com/win4r/AISuperDomain/assets/42172631/b83c98da-3f27-43a9-9df1-2da853afdb84" width="186" height="300">
+## 请我喝咖啡
+[!["Buy Me A Coffee"](https://storage.ko-fi.com/cdn/kofi2.png?v=3)](https://ko-fi.com/aila)
+
+## 我的微信群组
+
+<img src="https://github.com/win4r/AISuperDomain/assets/42172631/6816f225-728a-4979-a6ec-d3a331ef1c21" width="186" height="300">
 <img src="https://github.com/win4r/AISuperDomain/assets/42172631/7568cf78-c8ba-4182-aa96-d524d903f2bc" width="214.8" height="291">
 <img src="https://github.com/win4r/AISuperDomain/assets/42172631/fefe535c-8153-4046-bfb4-e65eacbf7a33" width="207" height="281">
