@@ -103,6 +103,9 @@ For support or feedback, please contact us through the GitHub issues section of 
 
 Thank you for exploring Aila Desktop Application. We look forward to seeing the innovative ways you use this platform to enhance your AI interactions!
 
+## Buy Me a Coffee
+[!["Buy Me A Coffee"](https://storage.ko-fi.com/cdn/kofi2.png?v=3)](https://ko-fi.com/aila)
+
 <img src="https://github.com/win4r/AISuperDomain/assets/42172631/b83c98da-3f27-43a9-9df1-2da853afdb84" width="186" height="300">
 <img src="https://github.com/win4r/AISuperDomain/assets/42172631/7568cf78-c8ba-4182-aa96-d524d903f2bc" width="214.8" height="291">
 <img src="https://github.com/win4r/AISuperDomain/assets/42172631/fefe535c-8153-4046-bfb4-e65eacbf7a33" width="207" height="281">
