@@ -28,6 +28,7 @@ Aila currently supports the following AI models:
 | Gemini             | A versatile AI capable of performing a variety of tasks, including language translation and data analysis. |
 | Claude             | An AI designed for conversational engagement, providing responses that can mimic human dialogue. |
 | Copilot            | Your AI companion that helps you navigate information and perform tasks across various domains. |
+| Mistral AI         | A large language model called Mistral, which is comparable to GPT-4 in terms of performance. |
 | Poe                | An advanced AI chatbot aggregator for seamless conversations and content generation. |
 | Perplexity         | An AI that focuses on answering complex questions with detailed explanations. |
 | HuggingChat        | An AI built on the Hugging Face platform, known for its natural language processing capabilities. |
