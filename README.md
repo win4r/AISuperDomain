@@ -86,7 +86,7 @@ You can start by locating the input box for AI, then use the browser's devtool t
 
 
 You can refer to the steps and methods I used to ask ChatGPT, as shared in the link to our conversation.
-This step is based on the input box of mistral.ai, allowing ChatGPT to provide a correct and usable script.
+This step is based on the input box of chat.mistral.ai, allowing ChatGPT to provide a correct and usable script.
 https://chat.openai.com/share/835483e9-1ca1-41bb-8858-1c1402e98648
 
 ## Contributing
