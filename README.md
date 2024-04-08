@@ -30,6 +30,7 @@ Aila currently supports the following AI models:
 | Copilot            | Your AI companion that helps you navigate information and perform tasks across various domains. |
 | Mistral AI         | A large language model called Mistral, which is comparable to GPT-4 in terms of performance. |
 | Poe                | An advanced AI chatbot aggregator for seamless conversations and content generation. |
+| Coze               | A next-generation AI application and chatbot developing platform for everyone.|
 | Perplexity         | An AI that focuses on answering complex questions with detailed explanations. |
 | HuggingChat        | An AI built on the Hugging Face platform, known for its natural language processing capabilities. |
 | YouAI              | A personalized AI that tailors its responses and recommendations to the individual user's preferences. |
