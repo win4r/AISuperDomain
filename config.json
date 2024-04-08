@@ -51,216 +51,223 @@
     },
     {
       "id": 8,
+      "name": "Coze",
+      "url": "https://www.coze.com/home",
+      "script": "(function(){var textarea=document.querySelector('.rc-textarea');if(!textarea){return console.error('Textarea not found');}var nativeInputValueSetter=Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype,\"value\").set;nativeInputValueSetter.call(textarea,'[message]');var inputEvent=new Event('input',{bubbles:true});textarea.dispatchEvent(inputEvent);setTimeout(()=>{var enterEvent=new KeyboardEvent('keydown',{key:'Enter',code:'Enter',keyCode:13,which:13,bubbles:true,cancelable:true});textarea.dispatchEvent(enterEvent);},500);})();",
+      "iniScript": ""
+    },
+    {
+      "id": 9,
       "name": "lmsys",
       "url": "https://chat.lmsys.org/",
       "script": "(function() { document.querySelectorAll('button.svelte-kqij2n').length >= 3 && document.querySelectorAll('button.svelte-kqij2n')[2].click(); document.querySelectorAll('.svelte-1ed2p3z').forEach(function(e) { e.style.display = 'none'; }); document.querySelectorAll('textarea[data-testid=\"textbox\"]').forEach(function(t) { t.value = '[message]'; t.dispatchEvent(new Event('input', { bubbles: true })); }); setTimeout(function() { [document.querySelector('#component-28'), document.querySelector('#component-65'), document.querySelector('#component-93')].forEach(function(b) { b && b.click(); }); }, 1000); })();",
       "iniScript": ""
     },
     {
-      "id": 9,
+      "id": 10,
       "name": "Assistant",
       "url": "https://poe.com/Assistant",
       "script": "((textarea = document.querySelector('textarea'), lastValue = textarea.value, textarea.value = '[message]', inputEvent = new Event('input', {bubbles: true }), inputEvent.simulated = true, tracker = textarea._valueTracker, tracker ? tracker.setValue(lastValue) : void 0, textarea.dispatchEvent(inputEvent), enterKeyEvent = new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true }), textarea.dispatchEvent(enterKeyEvent)));",
       "iniScript": ""
     },
     {
-      "id": 10,
+      "id": 11,
       "name": "Poe-ChatGPT",
       "url": "https://poe.com/ChatGPT",
       "script": "((textarea = document.querySelector('textarea'), lastValue = textarea.value, textarea.value = '[message]', inputEvent = new Event('input', {bubbles: true }), inputEvent.simulated = true, tracker = textarea._valueTracker, tracker ? tracker.setValue(lastValue) : void 0, textarea.dispatchEvent(inputEvent), enterKeyEvent = new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true }), textarea.dispatchEvent(enterKeyEvent)));",
       "iniScript": ""
     },
     {
-      "id": 11,
+      "id": 12,
       "name": "Poe-Claude-3-Sonnet",
       "url": "https://poe.com/Claude-3-Sonnet",
       "script": "((textarea = document.querySelector('textarea'), lastValue = textarea.value, textarea.value = '[message]', inputEvent = new Event('input', {bubbles: true }), inputEvent.simulated = true, tracker = textarea._valueTracker, tracker ? tracker.setValue(lastValue) : void 0, textarea.dispatchEvent(inputEvent), enterKeyEvent = new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true }), textarea.dispatchEvent(enterKeyEvent)));",
       "iniScript": ""
     },
     {
-      "id": 12,
+      "id": 13,
       "name": "Poe-Claude-instant-100k",
       "url": "https://poe.com/Claude-instant-100k",
       "script": "((textarea = document.querySelector('textarea'), lastValue = textarea.value, textarea.value = '[message]', inputEvent = new Event('input', {bubbles: true }), inputEvent.simulated = true, tracker = textarea._valueTracker, tracker ? tracker.setValue(lastValue) : void 0, textarea.dispatchEvent(inputEvent), enterKeyEvent = new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true }), textarea.dispatchEvent(enterKeyEvent)));",
       "iniScript": ""
     },
     {
-      "id": 13,
+      "id": 14,
       "name": "Web-Search",
       "url": "https://poe.com/Web-Search",
       "script": "((textarea = document.querySelector('textarea'), lastValue = textarea.value, textarea.value = '[message]', inputEvent = new Event('input', {bubbles: true }), inputEvent.simulated = true, tracker = textarea._valueTracker, tracker ? tracker.setValue(lastValue) : void 0, textarea.dispatchEvent(inputEvent), enterKeyEvent = new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true }), textarea.dispatchEvent(enterKeyEvent)));",
       "iniScript": ""
     },
     {
-      "id": 14,
+      "id": 15,
       "name": "Gemini-Pro",
       "url": "https://poe.com/Gemini-Pro",
       "script": "((textarea = document.querySelector('textarea'), lastValue = textarea.value, textarea.value = '[message]', inputEvent = new Event('input', {bubbles: true }), inputEvent.simulated = true, tracker = textarea._valueTracker, tracker ? tracker.setValue(lastValue) : void 0, textarea.dispatchEvent(inputEvent), enterKeyEvent = new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true }), textarea.dispatchEvent(enterKeyEvent)));",
       "iniScript": ""
     },
     {
-      "id": 15,
+      "id": 16,
       "name": "Code Copilot Plus",
       "url": "https://chat.openai.com/g/g-V9IaAM7A8-code-copilot-plus",
       "script": "(function() { var textarea = document.querySelector('textarea'); textarea.value = '[message]'; textarea.dispatchEvent(new Event('input', {bubbles: true})); setTimeout(function() { var sendButton = document.querySelector('[data-testid=\"send-button\"]'); if (sendButton) sendButton.click(); }, 1000); })();",
       "iniScript": "alert(0)"
     },
     {
-      "id": 16,
+      "id": 17,
       "name": "Poe-Qwen-通义千问",
       "url": "https://poe.com/Qwen-72b-Chat",
       "script": "((textarea = document.querySelector('textarea'), lastValue = textarea.value, textarea.value = '[message]', inputEvent = new Event('input', {bubbles: true }), inputEvent.simulated = true, tracker = textarea._valueTracker, tracker ? tracker.setValue(lastValue) : void 0, textarea.dispatchEvent(inputEvent), enterKeyEvent = new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true }), textarea.dispatchEvent(enterKeyEvent)));",
       "iniScript": ""
     },
     {
-      "id": 17,
+      "id": 18,
       "name": "together-gpt3.5",
       "url": "https://api.together.xyz/playground/chat/openchat/openchat-3.5-1210",
       "script": "(function simulateInputChangeAndEnter() { const input = document.querySelector('textarea[data-cy=\"input-textarea\"]'); const newValue = '[message]'; if (!input) { return console.error('Textarea not found'); } const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, \"value\").set; nativeInputValueSetter.call(input, newValue); const inputEvent = new Event('input', { bubbles: true }); input.dispatchEvent(inputEvent); setTimeout(() => { const keydownEvent = new KeyboardEvent('keydown', { bubbles: true, cancelable: true, keyCode: 13, key: 'Enter', code: 'Enter', shiftKey: false }); input.dispatchEvent(keydownEvent); }, 500); })();",
       "iniScript": ""
     },
     {
-      "id": 18,
+      "id": 19,
       "name": "together-Llama",
       "url": "https://api.together.xyz/playground/chat/meta-llama/Llama-2-70b-chat-hf",
       "script": "(function simulateInputChangeAndEnter() { const input = document.querySelector('textarea[data-cy=\"input-textarea\"]'); const newValue = '[message]'; if (!input) { return console.error('Textarea not found'); } const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, \"value\").set; nativeInputValueSetter.call(input, newValue); const inputEvent = new Event('input', { bubbles: true }); input.dispatchEvent(inputEvent); setTimeout(() => { const keydownEvent = new KeyboardEvent('keydown', { bubbles: true, cancelable: true, keyCode: 13, key: 'Enter', code: 'Enter', shiftKey: false }); input.dispatchEvent(keydownEvent); }, 500); })();",
       "iniScript": ""
     },
     {
-      "id": 19,
+      "id": 20,
       "name": "together-CodeLlama",
       "url": "https://api.together.xyz/playground/chat/codellama/CodeLlama-70b-Instruct-hf",
       "script": "(function simulateInputChangeAndEnter() { const input = document.querySelector('textarea[data-cy=\"input-textarea\"]'); const newValue = '[message]'; if (!input) { return console.error('Textarea not found'); } const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, \"value\").set; nativeInputValueSetter.call(input, newValue); const inputEvent = new Event('input', { bubbles: true }); input.dispatchEvent(inputEvent); setTimeout(() => { const keydownEvent = new KeyboardEvent('keydown', { bubbles: true, cancelable: true, keyCode: 13, key: 'Enter', code: 'Enter', shiftKey: false }); input.dispatchEvent(keydownEvent); }, 500); })();",
       "iniScript": ""
     },
     {
-      "id": 20,
+      "id": 21,
       "name": "Gemini pro 1.5",
       "url": "https://aistudio.google.com/app/prompts/new_chat",
       "script": "function simulateInputChange(){const e=document.querySelector('#chat-input-field'),t='[message]';if(!e)return console.error('input not found');e.textContent=t;const n=new KeyboardEvent('keydown',{key:'Enter',bubbles:!0}),c=new KeyboardEvent('keyup',{key:'Enter',bubbles:!0});e.dispatchEvent(n),e.dispatchEvent(c),setTimeout(()=>{document.querySelector('[aria-label=\"Run\"]').click(),setTimeout(()=>{e.textContent=''},500)},500)}simulateInputChange();",
       "iniScript": ""
     },
     {
-      "id": 21,
+      "id": 22,
       "name": "xAI Grok",
       "url": "https://poe.com/Grok-Beta",
       "script": "((textarea = document.querySelector('textarea'), lastValue = textarea.value, textarea.value = '[message]', inputEvent = new Event('input', {bubbles: true }), inputEvent.simulated = true, tracker = textarea._valueTracker, tracker ? tracker.setValue(lastValue) : void 0, textarea.dispatchEvent(inputEvent), enterKeyEvent = new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true }), textarea.dispatchEvent(enterKeyEvent)));",
       "iniScript": ""
     },
     {
-      "id": 22,
+      "id": 23,
       "name": "AI Playground",
       "url": "https://sdk.vercel.ai/",
       "script": "(function(){const input=document.querySelector('textarea[placeholder=\"Send a message\"]'),newValue='[message]';if(!input){return console.error('Textarea not found');}const nativeInputValueSetter=Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype,\"value\").set;nativeInputValueSetter.call(input,newValue);const inputEvent=new Event('input',{bubbles:true});input.dispatchEvent(inputEvent);setTimeout(()=>{const keydownEvent=new KeyboardEvent('keydown',{bubbles:true,cancelable:true,keyCode:13,key:'Enter',code:'Enter',shiftKey:false});input.dispatchEvent(keydownEvent);},500);})();",
       "iniScript": ""
     },
     {
-      "id": 23,
+      "id": 24,
       "name": "Pi Ai",
       "url": "https://pi.ai/talk",
       "script": "(function(){const a=document.querySelector('textarea[placeholder=\"Talk with Pi\"]');if(!a){console.error('Textarea not found');return;}const b=\"[message]\",c=Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype,\"value\").set;c.call(a,b);const d=new Event('input',{bubbles:true});a.dispatchEvent(d);setTimeout(()=>{const e=document.querySelector('button[aria-label=\"Submit text\"]');e?e.click():console.error('Send button not found');},500);})();",
       "iniScript": ""
     },
     {
-      "id": 24,
+      "id": 25,
       "name": "devin ai",
       "url": "https://preview.devin.ai/",
       "script": "(function(){const a=document.querySelector('textarea[placeholder=\"Give Devin a task to work on ...\"]');if(!a){console.error('Textarea not found');return;}const b=\"This is a simulated message\",c=Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype,\"value\").set;c.call(a,b);a.dispatchEvent(new Event('input',{bubbles:true}));setTimeout(()=>{a.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',bubbles:true}));},500);})();",
       "iniScript": ""
     },
     {
-      "id": 25,
+      "id": 26,
       "name": "together-Qwen(通义千问)",
       "url": "https://api.together.xyz/playground/chat/Qwen/Qwen1.5-72B-Chat",
       "script": "(function simulateInputChangeAndEnter() { const input = document.querySelector('textarea[data-cy=\"input-textarea\"]'); const newValue = '[message]'; if (!input) { return console.error('Textarea not found'); } const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, \"value\").set; nativeInputValueSetter.call(input, newValue); const inputEvent = new Event('input', { bubbles: true }); input.dispatchEvent(inputEvent); setTimeout(() => { const keydownEvent = new KeyboardEvent('keydown', { bubbles: true, cancelable: true, keyCode: 13, key: 'Enter', code: 'Enter', shiftKey: false }); input.dispatchEvent(keydownEvent); }, 500); })();",
       "iniScript": ""
     },
     {
-      "id": 26,
+      "id": 27,
       "name": "doubao(豆包)",
       "url": "https://www.doubao.com/chat/",
       "script": "(function(){ let a=document.querySelector('div#root textarea'),b=Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype,'value').set;b.call(a,'[message]');a.dispatchEvent(new Event('input',{ bubbles:true }));a.dispatchEvent(new KeyboardEvent('keydown',{ bubbles:true,key:'Enter',keyCode:13 })); })();",
       "iniScript": ""
     },
     {
-      "id": 27,
+      "id": 28,
       "name": "chatglm(智谱清言)",
       "url": "https://chatglm.cn/main/detail",
       "script": "(function(){const e=document.querySelector('.input-box-inner textarea');e&&(e.value='[message]',e.dispatchEvent(new Event('input',{bubbles:!0}))),setTimeout(()=>{(document.querySelector('.enter img.enter_icon')||{}).click(),setTimeout(()=>{const e=document.querySelector('.input-box-inner textarea');e&&(e.value='',e.dispatchEvent(new Event('input',{bubbles:!0})))},500)},500)})();",
       "iniScript": ""
     },
     {
-      "id": 28,
+      "id": 29,
       "name": "CharacterAI",
       "url": "https://beta.character.ai/chats",
       "script": "(function(){let a=document.querySelector('textarea'),b=Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype,\"value\").set;b.call(a,'[message]');let c=new Event('input',{bubbles:true});a.dispatchEvent(c);let d=new KeyboardEvent('keydown',{bubbles:true,key:'Enter',keyCode:13});a.dispatchEvent(d);})();document.querySelector('.aspect-square.h-10').click();",
       "iniScript": ""
     },
     {
-      "id": 29,
+      "id": 30,
       "name": "Mistral AI",
       "url": "https://chat.mistral.ai/chat",
       "script": "(function(){var textarea=document.querySelector('textarea.flex.w-full');if(!textarea){return console.error('Textarea not found');}textarea.value='[message]';textarea.dispatchEvent(new Event('input',{bubbles:true}));setTimeout(function(){textarea.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',code:'Enter',keyCode:13,which:13,bubbles:true,cancelable:true}));},500);})();",
       "iniScript": ""
     },
     {
-      "id": 30,
+      "id": 31,
       "name": "Poe-Photo_CreateE(Image)",
       "url": "https://poe.com/Photo_CreateE",
       "script": "((textarea = document.querySelector('textarea'), lastValue = textarea.value, textarea.value = '[message]', inputEvent = new Event('input', {bubbles: true }), inputEvent.simulated = true, tracker = textarea._valueTracker, tracker ? tracker.setValue(lastValue) : void 0, textarea.dispatchEvent(inputEvent), enterKeyEvent = new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true }), textarea.dispatchEvent(enterKeyEvent)));",
       "iniScript": ""
     },
     {
-      "id": 31,
+      "id": 32,
       "name": "Poe-Image_Creators(Image)",
       "url": "https://poe.com/Image_Creators",
       "script": "((textarea = document.querySelector('textarea'), lastValue = textarea.value, textarea.value = '[message]', inputEvent = new Event('input', {bubbles: true }), inputEvent.simulated = true, tracker = textarea._valueTracker, tracker ? tracker.setValue(lastValue) : void 0, textarea.dispatchEvent(inputEvent), enterKeyEvent = new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true }), textarea.dispatchEvent(enterKeyEvent)));",
       "iniScript": ""
     },
     {
-      "id": 32,
+      "id": 33,
       "name": "Poe-StableDiffusionXL(Image)",
       "url": "https://poe.com/StableDiffusionXL",
       "script": "((textarea = document.querySelector('textarea'), lastValue = textarea.value, textarea.value = '[message]', inputEvent = new Event('input', {bubbles: true }), inputEvent.simulated = true, tracker = textarea._valueTracker, tracker ? tracker.setValue(lastValue) : void 0, textarea.dispatchEvent(inputEvent), enterKeyEvent = new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true }), textarea.dispatchEvent(enterKeyEvent)));",
       "iniScript": ""
     },
     {
-      "id": 33,
+      "id": 34,
       "name": "Poe-Playground(Image)",
       "url": "https://poe.com/Playground-v2.5",
       "script": "((textarea = document.querySelector('textarea'), lastValue = textarea.value, textarea.value = '[message]', inputEvent = new Event('input', {bubbles: true }), inputEvent.simulated = true, tracker = textarea._valueTracker, tracker ? tracker.setValue(lastValue) : void 0, textarea.dispatchEvent(inputEvent), enterKeyEvent = new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true }), textarea.dispatchEvent(enterKeyEvent)));",
       "iniScript": ""
     },
     {
-      "id": 34,
+      "id": 35,
       "name": "Poe-Photo-Realism(Image)",
       "url": "https://poe.com/Photo-Realism",
       "script": "((textarea = document.querySelector('textarea'), lastValue = textarea.value, textarea.value = '[message]', inputEvent = new Event('input', {bubbles: true }), inputEvent.simulated = true, tracker = textarea._valueTracker, tracker ? tracker.setValue(lastValue) : void 0, textarea.dispatchEvent(inputEvent), enterKeyEvent = new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true }), textarea.dispatchEvent(enterKeyEvent)));",
       "iniScript": ""
     },
     {
-      "id": 35,
+      "id": 36,
       "name": "Meta image(Image)",
       "url": "https://imagine.meta.com/",
       "script": "(function() { let textarea = document.querySelector('textarea'); let nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, \"value\").set; nativeInputValueSetter.call(textarea, '[message]'); let inputEvent = new Event('input', { bubbles: true }); textarea.dispatchEvent(inputEvent); let enterEvent = new KeyboardEvent('keydown', { bubbles: true, key: 'Enter', keyCode: 13 }); textarea.dispatchEvent(enterEvent); })();",
       "iniScript": ""
     },
     {
-      "id": 36,
+      "id": 37,
       "name": "playground.ai(Image)",
       "url": "https://ui.playground.ai/",
       "script": "(function(){const textArea=Array.from(document.querySelectorAll('textarea')).find(el=>el.placeholder===\"Type a message...\");if(!textArea){console.error('Textarea not found');return;}const message='[message]';const nativeInputValueSetter=Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype,\"value\").set;nativeInputValueSetter.call(textArea,message);const inputEvent=new Event('input',{bubbles:true});textArea.dispatchEvent(inputEvent);const sendButton=document.querySelector('.search-btn');if(!sendButton){console.error('Send button not found');return;}setTimeout(()=>{sendButton.click();},500);})();",
       "iniScript": ""
     },
     {
-      "id": 37,
+      "id": 38,
       "name": "Suno(Music)",
       "url": "https://app.suno.ai/create/",
       "script": "(function(){const t=document.querySelector('.chakra-textarea.css-pljwwf'),e='[message]';if(!t)return console.error('Textarea not found');const n=Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype,\"value\").set;n.call(t,e);const o=new Event('input',{bubbles:!0});t.dispatchEvent(o),setTimeout(()=>{const e=new KeyboardEvent('keydown',{bubbles:!0,cancelable:!0,keyCode:13,key:'Enter',code:'Enter',shiftKey:!1});t.dispatchEvent(e)},500)})();",
       "iniScript": ""
     },
     {
-      "id": 38,
+      "id": 39,
       "name": "Suno AI V3 Lyrics Plus",
       "url": "https://chat.openai.com/g/g-jO85wxiFg-suno-ai-v3-lyrics-plus",
       "script": "(function() { var textarea = document.querySelector('textarea'); textarea.value = '[message]'; textarea.dispatchEvent(new Event('input', {bubbles: true})); setTimeout(function() { var sendButton = document.querySelector('[data-testid=\"send-button\"]'); if (sendButton) sendButton.click(); }, 1000); })();",
