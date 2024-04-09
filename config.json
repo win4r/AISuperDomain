@@ -279,6 +279,13 @@
       "url": "https://yiyan.baidu.com/",
       "script": "(function(){var e=document.querySelector('.yc-editor');if(!e){return console.error('Editable div not found');}e.focus();document.execCommand('insertText',false,'[message]');['keydown','keypress','input','keyup'].forEach(function(t){var n=new Event(t,{bubbles:true,cancelable:true});if(t==='keydown'||t==='keypress'||t==='keyup'){n.key='Enter';n.code='Enter';n.keyCode=13;}e.dispatchEvent(n);});setTimeout(function(){e.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',code:'Enter',keyCode:13,bubbles:true,cancelable:true}));},500);})();",
       "iniScript": ""
+    },
+    {
+      "id": 41,
+      "name": "Kimi Chat",
+      "url": "https://kimi.moonshot.cn/",
+      "script": "(function(){const editor=document.querySelector('[data-testid=\"msh-chatinput-editor\"]');const message='[message]';if(!editor){return console.error('Editor not found');}const insertText=(text)=>{const textEvent=new InputEvent('beforeinput',{data:text,bubbles:true,cancelable:true,inputType:'insertText'});editor.dispatchEvent(textEvent);};insertText(message);setTimeout(()=>{const enterEvent=new KeyboardEvent('keydown',{bubbles:true,cancelable:true,keyCode:13,key:'Enter',code:'Enter',shiftKey:false});editor.dispatchEvent(enterEvent);},500);})();",
+      "iniScript": "alert(0)"
     }
   ],
   "CurrentAi": [
