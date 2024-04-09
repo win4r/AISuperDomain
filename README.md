@@ -47,6 +47,9 @@ Aila currently supports the following AI models:
 | character ai       | An AI that creates character profiles and narratives for storytelling and gaming purposes. |
 | meta image generator | An AI that generates images based on textual descriptions, often used for creative projects. |
 | Suno AI            | An AI that composes music and generates songs based on user input, enhancing musical creativity. |
+| Wenxin Yiyan       | A powerful AI chatbot from Baidu. |
+| Kimi Chat          | A powerful AI chatbot from Moonshot AI. |
+
 
 ### Dynamic AI Display
 Customize your viewing experience by choosing how many AI responses to display simultaneously. Options include 1, 2, 3, 4, or 6 AI models, allowing flexibility in information presentation.
