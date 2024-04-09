@@ -272,6 +272,13 @@
       "url": "https://chat.openai.com/g/g-jO85wxiFg-suno-ai-v3-lyrics-plus",
       "script": "(function() { var textarea = document.querySelector('textarea'); textarea.value = '[message]'; textarea.dispatchEvent(new Event('input', {bubbles: true})); setTimeout(function() { var sendButton = document.querySelector('[data-testid=\"send-button\"]'); if (sendButton) sendButton.click(); }, 1000); })();",
       "iniScript": "alert(0)"
+    },
+    {
+      "id": 40,
+      "name": "文心一言",
+      "url": "https://yiyan.baidu.com/",
+      "script": "(function(){var e=document.querySelector('.yc-editor');if(!e){return console.error('Editable div not found');}e.focus();document.execCommand('insertText',false,'[message]');['keydown','keypress','input','keyup'].forEach(function(t){var n=new Event(t,{bubbles:true,cancelable:true});if(t==='keydown'||t==='keypress'||t==='keyup'){n.key='Enter';n.code='Enter';n.keyCode=13;}e.dispatchEvent(n);});setTimeout(function(){e.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',code:'Enter',keyCode:13,bubbles:true,cancelable:true}));},500);})();",
+      "iniScript": ""
     }
   ],
   "CurrentAi": [
