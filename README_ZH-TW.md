@@ -93,7 +93,7 @@ AI超元域桌面應用在MIT許可證下發布。更多細節，請查看LICENS
 
 ## 我的微信群
 
-<img src="https://github.com/win4r/AISuperDomain/assets/42172631/576ef5dd-6a11-434a-af33-e1257ea93329" width="186" height="300">
+<img src="https://github.com/win4r/AISuperDomain/assets/42172631/d6dcfd1a-60fa-4b6f-9d5e-1482150a7d95" width="186" height="300">
 <img src="https://github.com/win4r/AISuperDomain/assets/42172631/7568cf78-c8ba-4182-aa96-d524d903f2bc" width="214.8" height="291">
 <img src="https://github.com/win4r/AISuperDomain/assets/42172631/fefe535c-8153-4046-bfb4-e65eacbf7a33" width="207" height="281">
 
