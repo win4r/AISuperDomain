@@ -92,6 +92,20 @@
       "iniScript": ""
     },
     {
+      "id": 1022,
+      "name": "Poe-Llama-3-70B-T",
+      "url": "https://poe.com/Llama-3-70B-T",
+      "script": "((textarea = document.querySelector('textarea'), lastValue = textarea.value, textarea.value = '[message]', inputEvent = new Event('input', {bubbles: true }), inputEvent.simulated = true, tracker = textarea._valueTracker, tracker ? tracker.setValue(lastValue) : void 0, textarea.dispatchEvent(inputEvent), enterKeyEvent = new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true }), textarea.dispatchEvent(enterKeyEvent)));",
+      "iniScript": ""
+    },
+    {
+      "id": 1023,
+      "name": "Poe-Llama-3-70b-Inst-FW",
+      "url": "https://poe.com/Llama-3-70b-Inst-FW",
+      "script": "((textarea = document.querySelector('textarea'), lastValue = textarea.value, textarea.value = '[message]', inputEvent = new Event('input', {bubbles: true }), inputEvent.simulated = true, tracker = textarea._valueTracker, tracker ? tracker.setValue(lastValue) : void 0, textarea.dispatchEvent(inputEvent), enterKeyEvent = new KeyboardEvent('keydown', {key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true }), textarea.dispatchEvent(enterKeyEvent)));",
+      "iniScript": ""
+    },
+    {
       "id": 14,
       "name": "Web-Search",
       "url": "https://poe.com/Web-Search",
