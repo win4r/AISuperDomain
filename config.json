@@ -156,9 +156,9 @@
     },
     {
       "id": 21,
-      "name": "Gemini pro 1.5",
+      "name": "Gemini 1.5 pro",
       "url": "https://aistudio.google.com/app/prompts/new_chat",
-      "script": "function simulateInputChange(){const e=document.querySelector('#chat-input-field'),t='[message]';if(!e)return console.error('input not found');e.textContent=t;const n=new KeyboardEvent('keydown',{key:'Enter',bubbles:!0}),c=new KeyboardEvent('keyup',{key:'Enter',bubbles:!0});e.dispatchEvent(n),e.dispatchEvent(c),setTimeout(()=>{document.querySelector('[aria-label=\"Run\"]').click(),setTimeout(()=>{e.textContent=''},500)},500)}simulateInputChange();",
+      "script": "(function(){const e=document.querySelector('.ng-star-inserted.ng-touched'),t='[message]';if(!e)return console.error('input not found');e.value=t;const n=new Event('input',{bubbles:true});e.dispatchEvent(n);const o=new KeyboardEvent('keydown',{key:'Enter',bubbles:true}),c=new KeyboardEvent('keyup',{key:'Enter',bubbles:true});e.dispatchEvent(o);e.dispatchEvent(c);setTimeout(()=>{const e=document.querySelector('button[aria-label=\"Run\"]');if(e)e.click();setTimeout(()=>{e.value='';e.dispatchEvent(new Event('input',{bubbles:true}));},500);},500);})();",
       "iniScript": ""
     },
     {
