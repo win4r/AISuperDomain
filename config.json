@@ -4,7 +4,7 @@
       "id": 1,
       "name": "ChatGPT",
       "url": "https://chat.openai.com/",
-      "script": "(function() { var textarea = document.querySelector('textarea'); textarea.value = '[message]'; textarea.dispatchEvent(new Event('input', {bubbles: true})); setTimeout(function() { var sendButton = document.querySelector('[data-testid=\"send-button\"]'); if (sendButton) sendButton.click(); }, 1000); })();",
+      "script": "(function() { var textarea = document.querySelector('textarea'); textarea.value = '[message]'; textarea.dispatchEvent(new Event('input', {bubbles: true})); setTimeout(function() { var sendButton = document.querySelector('[data-testid=\"fruitjuice-send-button\"]'); if (sendButton) sendButton.click(); }, 1000); })();",
       "iniScript": "alert(0)"
     },
     {
