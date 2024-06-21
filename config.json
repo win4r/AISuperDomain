@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "ChatGPT",
-      "url": "https://chat.openai.com/",
+      "url": "https://chatgpt.com/",
       "script": "(function() { var textarea = document.querySelector('textarea'); textarea.value = '[message]'; textarea.dispatchEvent(new Event('input', {bubbles: true})); setTimeout(function() { var sendButton = document.querySelector('[data-testid=\"fruitjuice-send-button\"]'); if (sendButton) sendButton.click(); }, 1000); })();",
       "iniScript": "alert(0)"
     },
@@ -25,8 +25,22 @@
       "id": 4,
       "name": "Claude",
       "url": "https://claude.ai/chats",
-      "script": "(function(){document.querySelector('.is-empty.is-editor-empty').innerHTML = '[message]'; setTimeout(function(){var elem = document.querySelector('.ProseMirror p'); if (elem) {var event = new KeyboardEvent('keydown', {'key': 'Enter', 'code': 'Enter', 'keyCode': 13, 'which': 13, 'bubbles': true, 'cancelable': true}); setTimeout(function(){elem.dispatchEvent(event);}, 500); setTimeout(function(){var buttonElement = document.querySelector('button[aria-label=\"Send Message\"]'); if (buttonElement) {buttonElement.click();}}, 1000);}}, 1000);}());",
+      "script": "(function(){const e=document.querySelector('p[data-placeholder=\"Message Claude...\"]');if(!e)return console.error('Input element not found');const t='[message]',n=document.createTextNode(t);e.innerHTML='';e.appendChild(n);const o=new Event('input',{bubbles:!0,cancelable:!0});e.dispatchEvent(o);['change','keydown','keypress','keyup'].forEach(t=>{e.dispatchEvent(new Event(t,{bubbles:!0,cancelable:!0}))});e.dispatchEvent(new KeyboardEvent('keydown',{bubbles:!0,cancelable:!0,key:'Enter',keyCode:13,which:13}));setTimeout(()=>{const t=document.querySelector('button[aria-label=\"Send Message\"]');t?t.click():console.error('Send button not found')},500)})();",
       "iniScript": ""
+    },
+    {
+      "id": 103045,
+      "name": "Deepseek coder",
+      "url": "https://chat.deepseek.com/coder",
+      "script": "(function(){const t=document.querySelector('textarea#chat-input');if(!t)return console.error('Textarea not found');const e='[message]',n=Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype,'value').set;n.call(t,e);['input','change','keydown','keypress','keyup'].forEach(e=>{t.dispatchEvent(new Event(e,{bubbles:!0,cancelable:!0}))});t.dispatchEvent(new KeyboardEvent('keydown',{bubbles:!0,cancelable:!0,key:'Enter',keyCode:13,which:13}));setTimeout(()=>{const e=document.querySelector('div[role=\"button\"]');e?e.click():console.error('Send button not found')},500)})();",
+      "iniScript": "alert(0)"
+    },
+    {
+      "id": 1234046,
+      "name": "Deepseek",
+      "url": "https://chat.deepseek.com/",
+      "script": "(function(){const t=document.querySelector('textarea#chat-input');if(!t)return console.error('Textarea not found');const e='[message]',n=Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype,'value').set;n.call(t,e);['input','change','keydown','keypress','keyup'].forEach(e=>{t.dispatchEvent(new Event(e,{bubbles:!0,cancelable:!0}))});t.dispatchEvent(new KeyboardEvent('keydown',{bubbles:!0,cancelable:!0,key:'Enter',keyCode:13,which:13}));setTimeout(()=>{const e=document.querySelector('div[role=\"button\"]');e?e.click():console.error('Send button not found')},500)})();",
+      "iniScript": "alert(0)"
     },
     {
       "id": 5,
@@ -122,7 +136,7 @@
     {
       "id": 16,
       "name": "Code Copilot Plus",
-      "url": "https://chat.openai.com/g/g-V9IaAM7A8-code-copilot-plus",
+      "url": "https://chatgpt.com/g/g-V9IaAM7A8-code-copilot-plus",
       "script": "(function() { var textarea = document.querySelector('textarea'); textarea.value = '[message]'; textarea.dispatchEvent(new Event('input', {bubbles: true})); setTimeout(function() { var sendButton = document.querySelector('[data-testid=\"send-button\"]'); if (sendButton) sendButton.click(); }, 1000); })();",
       "iniScript": "alert(0)"
     },
@@ -283,7 +297,7 @@
     {
       "id": 39,
       "name": "Suno AI V3 Lyrics Plus",
-      "url": "https://chat.openai.com/g/g-jO85wxiFg-suno-ai-v3-lyrics-plus",
+      "url": "https://chatgpt.com/g/g-jO85wxiFg-suno-ai-v3-lyrics-plus",
       "script": "(function() { var textarea = document.querySelector('textarea'); textarea.value = '[message]'; textarea.dispatchEvent(new Event('input', {bubbles: true})); setTimeout(function() { var sendButton = document.querySelector('[data-testid=\"send-button\"]'); if (sendButton) sendButton.click(); }, 1000); })();",
       "iniScript": "alert(0)"
     },
@@ -304,12 +318,7 @@
   ],
   "CurrentAi": [
     { "id": 1 },
-    { "id": 2 },
-    { "id": 3 },
-    { "id": 6 },
-    { "id": 7 },
-    { "id": 5 },
-    { "id": 9 }
+    { "id": 2 }
   ],
   "Prompts": [
     {
