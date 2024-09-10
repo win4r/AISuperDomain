@@ -4,7 +4,7 @@
       "id": 1,
       "name": "ChatGPT",
       "url": "https://chatgpt.com/",
-      "script": "(function() { var textarea = document.querySelector('textarea'); textarea.value = '[message]'; textarea.dispatchEvent(new Event('input', {bubbles: true})); setTimeout(function() { var sendButton = document.querySelector('[data-testid=\"fruitjuice-send-button\"]'); if (sendButton) sendButton.click(); }, 1000); })();",
+      "script": "(function(){var e=document.querySelector('.ProseMirror');var p=document.createElement('p');p.textContent='[message]';e.innerHTML='';e.appendChild(p);e.dispatchEvent(new Event('input',{bubbles:true}));setTimeout(function(){var s=document.querySelector('button[data-testid=\"send-button\"]');if(s){s.disabled=false;s.click();}},1000);})();",
       "iniScript": "alert(0)"
     },
     {
