@@ -1,128 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:AIIntegrator"
-             x:Class="AIIntegrator.MainPage">
+             x:Class="Aila.MainPage"
+             Title="AI超元域">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="选择AI"
-                 IconImageSource="ai.png"
-                     Clicked="ToolbarItem_Select_AI_Clicked"
-                     />
-        <ToolbarItem Text="AI排序"
-                 IconImageSource="sort.png"
-                     Clicked="ToolbarItem_Ai_Sort_Clicked"
-                     />
-        
-        <ToolbarItem Text="切换到窗口数"
-                 IconImageSource="switch.png"
-                     Clicked="ToolbarItem_Switch_Webview_Quantity_Clicked"
-                     />
+    <!-- <AbsoluteLayout> -->
+    <!--     <Grid x:Name="_grid" -->
+    <!--           AbsoluteLayout.LayoutBounds="0, 0, 1, 1" -->
+    <!--           AbsoluteLayout.LayoutFlags="All"> -->
+    <!--         <Grid.ColumnDefinitions> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--         </Grid.ColumnDefinitions> -->
+    <!--         <Grid.RowDefinitions> -->
+    <!--             <RowDefinition Height="*" /> -->
+    <!--             <RowDefinition Height="Auto" /> -->
+    <!--         </Grid.RowDefinitions> -->
+    <!-- -->
+    <!--         ~1~ Editor 占据前10列 @1@ -->
+    <!--         <Editor  -->
+    <!--             x:Name="_editor" -->
+    <!--             Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="10" -->
+    <!--                 Placeholder="👉👉👉Enter your question here..." -->
+    <!--                 VerticalOptions="Start" -->
+    <!--                 FontSize="18" -->
+    <!--                 AutoSize="TextChanges"/> -->
+    <!-- -->
+    <!--         ~1~ Submit Button 占据第11列 @1@ -->
+    <!--         <Button -->
+    <!--             x:Name="SubmitBtn" -->
+    <!--             Grid.Row="1" Grid.Column="10" Text="➡ Submit" -->
+    <!--                 HeightRequest="50" -->
+    <!--                 VerticalOptions="End" -->
+    <!--                 Clicked="OnSubmitClicked" /> -->
+    <!-- -->
+    <!--         ~1~ Switch Button 占据第12列 @1@ -->
+    <!--         <Button  -->
+    <!--             x:Name="SwitchBtn" -->
+    <!--             Grid.Row="1" Grid.Column="11" Text="↩ Switch" -->
+    <!--                 HeightRequest="50" -->
+    <!--                 VerticalOptions="End" -->
+    <!--                 Clicked="OnSwitchClicked" /> -->
+    <!-- -->
+    <!--     </Grid> -->
+    <!-- </AbsoluteLayout> -->
 
-        <ToolbarItem Text="设置提示词"
-                 IconImageSource="prompt.png"
-                     Clicked="ToolbarItem_Prompts_Setting_Clicked"
-                     />
-        <ToolbarItem Text="自动绘画"
-                 IconImageSource="paint.png"
-                     Clicked="ToolbarItem_Ai_Auto_Paint_Clicked"
-                     />
-        <ToolbarItem Text="翻译按钮"
-                 IconImageSource="translate.png"
-                     Clicked="ToolbarItem_Show_Translate_button_Clicked"
-                     />
-        <ToolbarItem Text="检查更新"
-                 IconImageSource="update.png"
-                     Clicked="ToolbarItem_Check_Updates_Clicked"
-                     />
-        <ToolbarItem Text="关于作者"
-                 IconImageSource="about.png"
-                     Clicked="ToolbarItem_About_Clicked"
-                     />
-    </ContentPage.ToolbarItems>
-
-    <Grid x:Name="myGrid">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-
-        <!--这个公共webview放在最下面，防止出现莫名的bug-->
-        <WebView x:Name="webView_common" Grid.Row="0" Grid.Column="0" />
-
-        <!-- 其他的视图或控件 -->
-        <local:AISortContentView x:Name="AiSort" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="4" IsVisible="false" />
-
-        <local:SelectAIContentView x:Name="SelectAI" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="6" IsVisible="false" />
-
-
-        <Grid x:Name="MyPopupPromptsSetting" IsVisible="False" Grid.ColumnSpan="12">
-            <BoxView Color="Black" Opacity="0.5" />
-            <ScrollView>
-                <StackLayout x:Name="MyStackLayout" HorizontalOptions="Center" VerticalOptions="Center" Padding="20" BackgroundColor="Honeydew">
-                    <!--<Editor x:Name="MyEditorPrompts" HeightRequest="500" TextColor="Green" />-->
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                        <Button Text="新增" WidthRequest="100" Clicked="OnAddEditorClicked" BackgroundColor="#512bd4" TextColor="White"/>
-                        <Button Text="保存" WidthRequest="100" Clicked="OnMyPopupPromptsSettingConfirmClicked" BackgroundColor="#512bd4" TextColor="White"/>
-                        <Button Text="取消" WidthRequest="100" Clicked="OnMyPopupPromptsSettingCancelClicked" BackgroundColor="#512bd4" TextColor="White"/>
-                    </StackLayout>
-                </StackLayout>
-            </ScrollView>
-        </Grid>
-
-        <Grid x:Name="MyPopupStableDiffusionSetting" IsVisible="False" Grid.ColumnSpan="12">
-            <BoxView Color="Black" Opacity="0.5" />
-            <ScrollView>
-                <StackLayout x:Name="MyStableDiffusionStackLayout" HorizontalOptions="Center" VerticalOptions="Center" Padding="20" BackgroundColor="Honeydew">
-                    <Editor x:Name="MyEditorImagePrompts" Placeholder="请在此处输入提示词，要求一行一句..." PlaceholderColor="Green" HeightRequest="500" WidthRequest="500" TextColor="Green" />
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                        <Button Text="生成图像" Clicked="GenerateImageStableDifussionButtonClick"  WidthRequest="100"  BackgroundColor="#512bd4" TextColor="White"/>
-                        <Button Text="内置提示词" WidthRequest="100" Clicked="UseDefaultSDPromptButtonClick"  BackgroundColor="#512bd4" TextColor="White"/>
-                        <Button Text="清空提示词" WidthRequest="100" Clicked="EmptySDPromptsButtonClick"  BackgroundColor="#512bd4" TextColor="White"/>
-                        <Button Text="取消" WidthRequest="100" Clicked="CancelSDButtonClick"  BackgroundColor="#512bd4" TextColor="White"/>
-                    </StackLayout>
-                </StackLayout>
-            </ScrollView>
-        </Grid>
-
-        <Grid Grid.Row="1" Grid.ColumnSpan="12">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-
-            <Editor x:Name="editor1" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" MaximumHeightRequest="150" Placeholder="👉👉👉在这里输入你要提问的问题，使用提示词可以直接输入这个斜线/即可 调出AI请输入@加前三个字母  输入#可调出常驻提示词 " 
-                        Keyboard="Text" PlaceholderColor="Green" BackgroundColor="White" TextColor="Green" AutoSize="TextChanges" 
-                        VerticalOptions="Start"  />
-
-            <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalOptions="Start">
-                <Button x:Name="SendButton" Text="发送👉" Clicked="SendButton_Clicked" FontSize="12"/>
-
-                <Button x:Name="TranslateAndSendButton" IsVisible="false" Text="翻译并发送" Clicked="TranslateAndSendButton_Clicked" FontSize="12"/>
-                <Button x:Name="SwitchButton" Text="切换AI" Clicked="SwitchButton_Clicked" FontSize="12"/>
-                <Picker x:Name="myPicker" WidthRequest="90" BackgroundColor="#512bd4" TextColor="White" SelectedIndexChanged="OnPickerSelectedIndexChanged" FontSize="12" />
-                <Button x:Name="MergeAnswerButton" Text="多AI协作" Clicked="MergeAnswerButton_Clicked" FontSize="12"/>
-
-            </StackLayout>
-        </Grid>
-    </Grid>
+    
 </ContentPage>

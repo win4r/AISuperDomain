@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aila.SettingPage">
+    
+    <ContentPage.Content>
+        <VerticalStackLayout Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
+            <Grid HorizontalOptions="Center" VerticalOptions="Center" ColumnSpacing="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <!-- 第一个CollectionView及其说明 -->
+                <VerticalStackLayout Grid.Column="0" HorizontalOptions="Center">
+                    <Label Text="Multi-AI Selection" HorizontalOptions="Start"/>
+                    <BoxView HeightRequest="2" Color="BlueViolet" HorizontalOptions="Fill" Margin="0,10,0,10"/> <!-- 分隔线 -->
+                    <CollectionView x:Name="AiConfigsCollectionView" WidthRequest="300" HeightRequest="600">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <HorizontalStackLayout HorizontalOptions="Fill">
+                                    <CheckBox IsChecked="{Binding IsSelected}"
+                                              CheckedChanged="CheckBox_CheckedChanged"  HorizontalOptions="Start"/>
+                                    <Label Text="{Binding Name}"  HorizontalOptions="Start" VerticalOptions="Center"/>
+                                </HorizontalStackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+
+                <!-- 第二个CollectionView及其说明 -->
+                <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center">
+                    <Label Text="Your AI Selections" HorizontalOptions="Start"/>
+                    <BoxView HeightRequest="2" Color="BlueViolet" HorizontalOptions="Fill" Margin="0,10,0,10"/> <!-- 分隔线 -->
+                    <CollectionView x:Name="SelectedAiConfigsCollectionView" WidthRequest="300" HeightRequest="600">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <HorizontalStackLayout HeightRequest="50" HorizontalOptions="Center">
+                                    <Label Text="{Binding Name}" VerticalOptions="Center" HeightRequest="50"/>
+                                </HorizontalStackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+
+                <!-- 第三个CollectionView及其说明 -->
+                <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center">
+                    <Label Text="Number of AI Displays" HorizontalOptions="Start"/>
+                    <BoxView HeightRequest="2" Color="BlueViolet" HorizontalOptions="Fill" Margin="0,10,0,10"/> <!-- 分隔线 -->
+                    <CollectionView x:Name="NumberCollectionView" WidthRequest="300" HeightRequest="600">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <HorizontalStackLayout HorizontalOptions="Start">
+                                    <RadioButton GroupName="NumberGroup"
+                                                 IsChecked="{Binding IsSelected}"
+                                                 Content="{Binding Number}"/>
+                                </HorizontalStackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+            </Grid>
+            <BoxView HeightRequest="2" Color="BlueViolet" HorizontalOptions="Fill" Margin="0,10,0,10"/> <!-- 分隔线 -->
+
+            <!-- 保存按钮 -->
+            <Button Text="↓ Save" 
+                    HorizontalOptions="Center" 
+                    FontSize="Medium"
+                    WidthRequest="100"
+                    HeightRequest="50"
+                    ToolTipProperties.Text="Click to Save your Configuration"
+                    Clicked="SaveButton_Clicked"/>
+        </VerticalStackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

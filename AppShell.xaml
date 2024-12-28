@@ -1,18 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
-    x:Class="AIIntegrator.AppShell"
+    x:Class="Aila.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:AIIntegrator"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:local="clr-namespace:Aila"
+    Shell.FlyoutBehavior="Flyout"
+    Title="AiLa - One question,multi-AI reply.">
 
-    <ShellContent
-        Title="Ai超元域 v7.5 "
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
 
+    <Shell.FlyoutHeader>
+        <StackLayout Padding="10" Margin="0" HeightRequest="80"> <!-- Adjusted Padding & Margin -->
+            <Label Text="🔺AiLa v1.0🔻" HorizontalOptions="Center" VerticalOptions="Center" />
+        </StackLayout>
+    </Shell.FlyoutHeader>
+    
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="10">
+            <Label Text="🟢wechat(微信):stoeng" HorizontalOptions="Start" VerticalOptions="Center" />
+            <Label Text="🟢email:️win4r@outlook.com" HorizontalOptions="Start" VerticalOptions="Center" />
+            <Label Text="🟢哔哩哔哩:AI超元域" HorizontalOptions="Start" VerticalOptions="Center" />
+            <Label Text="🟢YouTube:AI超元域" HorizontalOptions="Start" VerticalOptions="Center" />
+
+        </StackLayout>
+    </Shell.FlyoutFooter>
+    
+    <FlyoutItem Title="➣🏠 Home">
+        <ShellContent Route="home" ContentTemplate="{DataTemplate local:MainPage}" />
+    </FlyoutItem>
+    
+    <FlyoutItem Title="➣⚙️ Settings">
+        <ShellContent Route="setting" ContentTemplate="{DataTemplate local:SettingPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="➣🔐️ Config File">
+        <ShellContent Route="config" ContentTemplate="{DataTemplate local:ConfigPage}" />
+    </FlyoutItem>
 </Shell>
-
-<!--Ai超元域 v6.9 会员专享版(带免费GPT4)-->
-<!--👉哔哩哔哩：AI超元域      🤗软件永久免费-->
-<!-- 作者微信: stoeng 🤗  本软件完全免费， 👉我的哔哩哔哩：AI超元域 欢迎关注我的哔哩哔哩：AI超元域-->

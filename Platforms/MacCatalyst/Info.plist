@@ -4,7 +4,6 @@
 <dict>
 	<key>UIDeviceFamily</key>
 	<array>
-		<integer>1</integer>
 		<integer>2</integer>
 	</array>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -26,5 +25,15 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Allow Photos permission</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow to access photos</string>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>Allow to access documents</string>
+	<key>NSDownloadsFolderUsageDescription</key>
+	<string>Allow to access downloads</string>
+	<key>NSFileProviderDomainUsageDescription</key>
+	<string>Allow to access files</string>
 </dict>
 </plist>

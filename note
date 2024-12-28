@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aila.MainPage"
+             Title="AI超元域">
+
+    <!-- <AbsoluteLayout> -->
+    <!--     <Grid x:Name="_grid" -->
+    <!--           AbsoluteLayout.LayoutBounds="0, 0, 1, 1" -->
+    <!--           AbsoluteLayout.LayoutFlags="All"> -->
+    <!--         <Grid.ColumnDefinitions> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--             <ColumnDefinition Width="*" /> -->
+    <!--         </Grid.ColumnDefinitions> -->
+    <!--         <Grid.RowDefinitions> -->
+    <!--             <RowDefinition Height="*" /> -->
+    <!--             <RowDefinition Height="Auto" /> -->
+    <!--         </Grid.RowDefinitions> -->
+    <!-- -->
+    <!--         ~1~ Editor 占据前10列 @1@ -->
+    <!--         <Editor  -->
+    <!--             x:Name="_editor" -->
+    <!--             Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="10" -->
+    <!--                 Placeholder="👉👉👉Enter your question here..." -->
+    <!--                 VerticalOptions="Start" -->
+    <!--                 FontSize="18" -->
+    <!--                 AutoSize="TextChanges"/> -->
+    <!-- -->
+    <!--         ~1~ Submit Button 占据第11列 @1@ -->
+    <!--         <Button -->
+    <!--             x:Name="SubmitBtn" -->
+    <!--             Grid.Row="1" Grid.Column="10" Text="➡ Submit" -->
+    <!--                 HeightRequest="50" -->
+    <!--                 VerticalOptions="End" -->
+    <!--                 Clicked="OnSubmitClicked" /> -->
+    <!-- -->
+    <!--         ~1~ Switch Button 占据第12列 @1@ -->
+    <!--         <Button  -->
+    <!--             x:Name="SwitchBtn" -->
+    <!--             Grid.Row="1" Grid.Column="11" Text="↩ Switch" -->
+    <!--                 HeightRequest="50" -->
+    <!--                 VerticalOptions="End" -->
+    <!--                 Clicked="OnSwitchClicked" /> -->
+    <!-- -->
+    <!--     </Grid> -->
+    <!-- </AbsoluteLayout> -->
+
+    
+</ContentPage>
+
+
+
+    private Dictionary<WebView, (string Url, int Row, int Column, int ColumnSpan)> _webViewsInfo = new();
+
+    private Button SubmitBtn;
+
+    private Button SwitchBtn;
+
+
+
+  private void UpdateToolbarItemsForCurrentGroup()
+    {
+        // 首先清除现有的 ToolbarItems
+        ToolbarItems.Clear();
+
+        // 动态计算基于 viewsCount 的当前组的 WebView 范围
+        int groupSize = _viewsCount; // 使用当前的viewsCount确定每组的大小
+        int start = _currentGroupIndex * groupSize;
+        int end = Math.Min(start + groupSize, _configuration.CurrentAi.Count);
+
+        //
+        // // 创建并添加新的ToolbarItem
+        // var toolbarItem = new ToolbarItem
+        // {
+        //     Text = "\ud83c\udfe0 Home", // 显示名称
+        // };
+        //
+        // toolbarItem.Clicked += (sender, e) =>
+        // {
+        //     // 这里添加你希望在点击时执行的代码
+        //     RestoreWebViewsLayout(); // 例如，调用 RestoreWebViewsLayout 方法
+        // };
+        //
+        // ToolbarItems.Add(toolbarItem);
+
+        // 为当前组的每个 WebView 添加 ToolbarItem
+        for (int i = start; i < end; i++)
+        {
+            var currentAi = _configuration.CurrentAi[i];
+            var aiConfig = _configuration.AiConfig.FirstOrDefault(ai => ai.Id == currentAi.Id);
+            if (aiConfig != null)
+            {
+                // 创建并添加新的ToolbarItem
+                ToolbarItems.Add(new ToolbarItem
+                {
+                    Text = "\ud83d\udfe2" + aiConfig.Name, // 显示AI配置的名称
+                    Command = new Command(() => ExecuteLoadWebViewCommand(aiConfig.Url))
+                });
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+      // 新增方法：恢复 WebView 控件到其存储的布局位置
+        private void RestoreWebViewsLayout()
+        {
+            _editor.IsVisible = true;
+            SubmitBtn.IsVisible = true;
+            SwitchBtn.IsVisible = true;
+    
+            foreach (var item in _webViewsInfo)
+            {
+                WebView webView = item.Key;
+    
+                webView.IsVisible = true;
+    
+                var layoutInfo = item.Value;
+    
+                Grid.SetRow(webView, layoutInfo.Row);
+                Grid.SetRowSpan(webView, 1);
+    
+                Grid.SetColumn(webView, layoutInfo.Column);
+                Grid.SetColumnSpan(webView, layoutInfo.ColumnSpan);
+            }
+        }
+        
+        
+        
+        
+        
+        
+          private void ShowPopupWithCollectionView()
+            {
+                // 创建 CollectionView 并设置数据源
+                var collectionView = new CollectionView
+                {
+                    ItemsSource = _configuration.Prompts,
+                    SelectionMode = SelectionMode.Single,
+        
+                    ItemTemplate = new DataTemplate(() =>
+                    {
+                        var frame = new Frame
+                        {
+                            BackgroundColor = Colors.White,
+        
+                            Padding = 10,
+                            CornerRadius = 5,
+                            // BorderColor = Colors.LightGray,
+                            Content = new Label
+                            {
+                                TextColor = Colors.Black,
+                                VerticalOptions = LayoutOptions.Center,
+                                HorizontalOptions = LayoutOptions.Start
+                            }
+                        };
+        
+                        frame.Content.SetBinding(Label.TextProperty, nameof(Prompts.Title));
+        
+                        return frame;
+                    }),
+                };
+        
+                // 创建 Frame 用于包装 collectionView
+                var frameForCollectionView = new Frame
+                {
+                    Content = collectionView,
+                    Padding = 0 // 根据需要调整
+                };
+        
+                collectionView.SelectionChanged += (sender, e) =>
+                {
+                    if (e.CurrentSelection.Count > 0)
+                    {
+                        var selectedItem = e.CurrentSelection[0] as Prompts;
+                        if (selectedItem != null)
+                        {
+                            // 根据 ID 查询对应的 Prompt
+                            var prompt = _configuration.Prompts.FirstOrDefault(p => p.Id == selectedItem.Id)?.Prompt;
+                            if (!string.IsNullOrEmpty(prompt))
+                            {
+                                // 检查文本是否以 "/" 开头
+                                if (_editor.Text.StartsWith("/"))
+                                {
+                                    // 移除第一个字符 "/"
+                                    _editor.Text = _editor.Text.Substring(1);
+        
+                                    // 防止光标移动到文本开头
+                                    _editor.CursorPosition = _editor.Text.Length;
+                                }
+        
+                                _editor.Text = prompt;
+        
+                                if (_grid.Children.Contains(frameForCollectionView))
+                                {
+                                    _grid.Children.Remove(frameForCollectionView);
+                                }
+                            }
+        
+                            collectionView.SelectedItem = null; // 清除选择
+                        }
+                    }
+                };
+        
+        
+                // 将 frame 添加到 Grid 的第一行和第一列
+                Grid.SetRow(frameForCollectionView, 0);
+                Grid.SetColumn(frameForCollectionView, 0);
+                Grid.SetColumnSpan(frameForCollectionView, 3);
+        
+                _grid.Children.Add(frameForCollectionView);
+            }
+            
+            
+            // 定义命令执行的方法
+                private void ExecuteLoadWebViewCommand(string url)
+                {
+                    _editor.IsVisible = false;
+                    SubmitBtn.IsVisible = false;
+                    SwitchBtn.IsVisible = false;
+            
+                    _webViewsInfo.Clear();
+            
+                    if (this.Content is View contentView)
+                    {
+                        FindVisibleWebViewsAndInfo(contentView);
+                    }
+            
+                    foreach (var item in _webViewsInfo)
+                    {
+                        if (item.Value.Url.ToString() == url)
+                        {
+                            WebView webView = item.Key;
+                            // 更新 WebView 布局
+                            Grid.SetRow(webView, 0);
+                            Grid.SetRowSpan(webView, 2);
+                            Grid.SetColumn(webView, 0);
+                            Grid.SetColumnSpan(webView, 12);
+                        }
+                        else
+                        {
+                            WebView webView = item.Key;
+                            webView.IsVisible = false;
+                        }
+                    }
+                }
+
+
+ private void FindVisibleWebViewsAndInfo(View view)
+    {
+        if (view is WebView webView && webView.IsVisible)
+        {
+            string url = string.Empty;
+            // 确定 WebView.Source 的类型并相应地获取 URL
+            if (webView.Source is UrlWebViewSource urlSource)
+            {
+                url = urlSource.Url; // 获取实际的 URL 字符串
+            }
+
+            var row = Grid.GetRow(webView);
+            var column = Grid.GetColumn(webView);
+            var columnSpan = Grid.GetColumnSpan(webView);
+
+            // 将 WebView 及其信息添加到字典中
+            _webViewsInfo.Add(webView, (Url: url, Row: row, Column: column, ColumnSpan: columnSpan));
+        }
+
+        // 如果当前视图是布局容器，遍历其子视图
+        if (view is Layout layout)
+        {
+            foreach (var child in layout.Children)
+            {
+                if (child is View childView)
+                {
+                    FindVisibleWebViewsAndInfo(childView);
+                }
+            }
+        }
+    }
+
+
+        AddItemToGrid(_editor, 1, 0, 10);
+
+        AddButtonToGrid(SubmitBtn,"\u27a2 Submit", OnSubmitClicked, 1, 10, 1, "Click to Send your question to AI");
+        AddButtonToGrid(SwitchBtn,"\u21b9 Switch", OnSwitchClicked, 1, 11, 1, "Click to Switch AI");
+
+
+
+    private void AddButtonToGrid(Button button,string text, EventHandler onClicked, int row, int column, int columnSpan, string toolTip)
+    {
+         button = new Button
+        {
+            
+            Text = text,
+            HeightRequest = 50,
+            HorizontalOptions = LayoutOptions.Fill,
+            VerticalOptions = LayoutOptions.End
+        };
+        ToolTipProperties.SetText(button, toolTip);
+
+        button.Clicked += onClicked;
+        AddItemToGrid(button, row, column, columnSpan);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,8 +1,0 @@
-<start_of_turn>user
-knock knock<end_of_turn>
-<start_of_turn>model
-who is there<end_of_turn>
-<start_of_turn>user
-LaMDA<end_of_turn>
-<start_of_turn>model
-LaMDA who?<end_of_turn>

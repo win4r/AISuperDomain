@@ -1,9 +1,9 @@
-﻿namespace AIIntegrator;
+﻿namespace Aila;
 
 public partial class AppShell : Shell
 {
-	public AppShell()
-	{
-		InitializeComponent();
-	}
+    public AppShell()
+    {
+        InitializeComponent();
+    }
 }
