@@ -1,5 +1,12 @@
 {
   "AiConfig": [
+  {
+      "id": 0,
+      "name": "deepseek",
+      "url": "https://chat.deepseek.com/a/chat/",
+      "script": "(function(){var a=document.getElementById('chat-input');if(!a)return console.error('Chat input textarea not found');var b=a.value,c=Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype,\"value\").set;c.call(a,'[message]');var d=a._valueTracker;d&&d.setValue(b);var e=new Event('input',{bubbles:!0});e.simulated=!0,a.dispatchEvent(e),setTimeout(function(){var f=new KeyboardEvent('keydown',{key:'Enter',code:'Enter',keyCode:13,which:13,bubbles:!0,cancelable:!0,composed:!0});a.dispatchEvent(f);var g=document.querySelectorAll('.ds-button');for(var h=0;h<g.length;h++){var i=g[h],j=i.getBoundingClientRect(),k=j.left>a.getBoundingClientRect().right;if(k||h===g.length-1){i.disabled=!1,i.click();break}}},500)})();",
+      "iniScript": "alert(0)"
+    },
     {
       "id": 1,
       "name": "ChatGPT",
