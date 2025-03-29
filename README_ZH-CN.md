@@ -9,6 +9,7 @@
 
 ![图片](https://github.com/win4r/AISuperDomain/assets/42172631/2115997d-8b00-4767-bf79-103b4e53abc3)
 
+### 🔥视频演示：https://b23.tv/B1OXY2V
 
 # AI超元域桌面应用
 
