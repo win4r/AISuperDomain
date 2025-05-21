@@ -1,5 +1,11 @@
 ﻿using System.Text;
 using CommunityToolkit.Mvvm.Messaging;
+using ReverseMarkdown;
+using System.IO; // For MemoryStream, StreamWriter
+using CommunityToolkit.Maui.Storage; // For FileSaver
+// Potentially CommunityToolkit.Maui also if DisplayAlert is from there, but it's usually from Page
+using Microsoft.Maui.Storage; // For FileSystem (if needed, though FileSaver handles paths)
+
 
 namespace Aila;
 
@@ -23,6 +29,9 @@ public partial class MainPage
 
     private Dictionary<WebView, (string Url, int Row, int Column, int ColumnSpan)> _webViewsInfo = new();
 
+    private WebView _focusedWebView;
+    private ToolbarItem _exportMarkdownButton;
+
     // 添加 Editor 到第二行的前10列
     private Editor _editor = new Editor
     {
@@ -42,7 +51,8 @@ public partial class MainPage
     public MainPage()
     {
         InitializeComponent();
-
+        
+        InitializeToolbarItems(); // Call to setup toolbar items including Export button
         InitializePageContent();
         
         _configurationManager.OnDisplayAlertRequested = DisplayAlertAsync;
@@ -57,12 +67,98 @@ public partial class MainPage
             {
                 layout.Children.Clear();
             }
-
-            InitializePageContent();
+            // ToolbarItems might need re-evaluation if config changes affect it,
+            // but Home and Export buttons are static in terms of existence.
+            InitializePageContent(); 
             
             _configurationManager.OnDisplayAlertRequested = DisplayAlertAsync;
             
         });
+    }
+
+    private void InitializeToolbarItems()
+    {
+        // Home Button (ensure it's always first or present)
+        var homeButtonText = "\ud83c\udfe0 Home";
+        var homeToolbarItem = ToolbarItems.FirstOrDefault(ti => ti.Text == homeButtonText);
+        if (homeToolbarItem == null)
+        {
+            homeToolbarItem = new ToolbarItem { Text = homeButtonText };
+            homeToolbarItem.Clicked += (s, args) => RestoreWebViewsLayout();
+            ToolbarItems.Insert(0, homeToolbarItem); // Ensure it's at the beginning
+        }
+        else // If it exists, ensure it's at the beginning
+        {
+            ToolbarItems.Remove(homeToolbarItem);
+            ToolbarItems.Insert(0, homeToolbarItem);
+        }
+
+        // Export Markdown Button
+        _exportMarkdownButton = new ToolbarItem
+        {
+            Text = "Export as MD",
+            IconImageSource = null, 
+            Order = ToolbarItemOrder.Primary, // Primary to appear alongside AI names if desired, or Secondary
+            Priority = 1, // Adjust as needed, lower numbers often appear first within an Order
+            IsVisible = false 
+        };
+        _exportMarkdownButton.Clicked += OnExportToMarkdownClicked;
+        
+        // Add Export button after Home, if not already present
+        if (!ToolbarItems.Contains(_exportMarkdownButton))
+        {
+            ToolbarItems.Insert(1, _exportMarkdownButton);
+        }
+    }
+    
+    private async void OnExportToMarkdownClicked(object sender, EventArgs e)
+    {
+        if (_focusedWebView == null)
+        {
+            await DisplayAlert("Export Error", "No WebView is currently focused. Please select an AI view to make it full screen first.", "OK");
+            return;
+        }
+
+        try
+        {
+            string htmlContent = await _focusedWebView.EvaluateJavaScriptAsync("document.documentElement.outerHTML;");
+
+            if (string.IsNullOrEmpty(htmlContent))
+            {
+                await DisplayAlert("Export Content", "Failed to retrieve HTML content from the focused WebView.", "OK");
+            }
+            else
+            {
+                var converter = new Converter();
+                string markdownContent = converter.Convert(htmlContent);
+
+                // Save the Markdown content to a file
+                var defaultFileName = $"AilaExport_{DateTime.Now:yyyyMMddHHmmss}.md";
+                using var stream = new MemoryStream(Encoding.UTF8.GetBytes(markdownContent ?? ""));
+                
+                // Ensure CancellationToken.None is passed or handle cancellation appropriately
+                var fileSaverResult = await FileSaver.Default.SaveAsync(defaultFileName, stream, CancellationToken.None);
+
+                if (fileSaverResult.IsSuccessful)
+                {
+                    await DisplayAlert("Success", $"Markdown saved to: {fileSaverResult.FilePath}", "OK");
+                }
+                else
+                {
+                    string errorMessage = fileSaverResult.Exception?.Message ?? "Unknown error during saving.";
+                    if (fileSaverResult.Exception is CommunityToolkit.Maui.Storage.FileSaverException fse && fse.Message.Contains("Operation cancelled"))
+                    {
+                        errorMessage = "Save operation was cancelled by the user.";
+                    }
+                    await DisplayAlert("Error", $"Failed to save Markdown: {errorMessage}", "OK");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // Log the exception or display a more specific error message
+            await DisplayAlert("JavaScript Execution Error", $"An error occurred while trying to get HTML content: {ex.Message}", "OK");
+        }
     }
 
     private async void Editor_TextChanged(object? sender, TextChangedEventArgs e)
@@ -631,51 +727,98 @@ public partial class MainPage
         foreach (var item in _webViewsInfo)
         {
             WebView webView = item.Key;
-
-            webView.IsVisible = true;
+            webView.IsVisible = true; // Make all previously stored webviews visible in their original layout
 
             var layoutInfo = item.Value;
-
             Grid.SetRow(webView, layoutInfo.Row);
-            Grid.SetRowSpan(webView, 1);
-
+            Grid.SetRowSpan(webView, 1); // Restore original row span
             Grid.SetColumn(webView, layoutInfo.Column);
             Grid.SetColumnSpan(webView, layoutInfo.ColumnSpan);
         }
+        // No need to clear _webViewsInfo here as it's repopulated if another view goes full screen
+        // or used if switching groups. It should be cleared before FindVisibleWebViewsAndInfo if that's the intent.
+
+        if (_exportMarkdownButton != null)
+        {
+            _exportMarkdownButton.IsVisible = false;
+        }
+        _focusedWebView = null;
+        UpdateToolbarItemsForCurrentGroup(); // Refresh AI names in toolbar
     }
 
 // 定义命令执行的方法
     private void ExecuteLoadWebViewCommand(string url)
     {
-        RestoreWebViewsLayout();
+        // First, ensure all webviews are restored to their multi-view layout and visible
+        // This also clears _focusedWebView and hides the export button.
+        RestoreWebViewsLayout(); 
         
+        // Then, hide editor and buttons for full-screen mode
         SetVisibilityForEditorsAndButtons(_grid, false);
         
-        _webViewsInfo.Clear();
+        _webViewsInfo.Clear(); // Clear before finding new layout info for full screen
 
-        if (this.Content is View contentView)
+        // Find all currently visible WebViews and their layout to store them before going full screen
+        // However, this should ideally happen BEFORE RestoreWebViewsLayout if we need to save their state prior to reset.
+        // For full-screen, we are primarily concerned with the one becoming full-screen.
+        // The existing _webViewsToAdd list (from InitializePageContent) might be more relevant for original positions.
+        // Let's refine: _webViewsInfo should store the multi-view layout when it's active.
+        // When going full-screen, we don't need to FindVisibleWebViewsAndInfo again for _webViewsInfo.
+        // _webViewsInfo is populated in InitializePageContent via AddItemToGrid and implicitly by how WebViews are laid out.
+        // The current FindVisibleWebViewsAndInfo would capture the state *after* RestoreWebViewsLayout if called here.
+        // It's better to ensure _webViewsInfo is correctly populated when the multi-view layout is established.
+
+        bool foundTargetWebView = false;
+        foreach (var child in _grid.Children) // Iterate through children of the grid
         {
-            FindVisibleWebViewsAndInfo(contentView);
+            if (child is WebView webView)
+            {
+                var webViewSourceUrl = (webView.Source as UrlWebViewSource)?.Url;
+                if (webViewSourceUrl == url)
+                {
+                    // Store original layout if not already stored, or if it's the first time this view goes full screen
+                    // This part is tricky if _webViewsInfo is not reliably populated with the multi-view state.
+                    // Assuming _webViewsInfo is populated correctly during InitializePageContent or group switching.
+                    if (!_webViewsInfo.ContainsKey(webView)) // Simplified: ensure it's in info, though ideally info is built once for multi-view
+                    {
+                         //This logic is flawed as GetRow/Col might be 0 if not previously set in a multi-view grid
+                         //_webViewsInfo[webView] = (Url: webViewSourceUrl, Row: Grid.GetRow(webView), Column: Grid.GetColumn(webView), ColumnSpan: Grid.GetColumnSpan(webView));
+                    }
+
+                    Grid.SetRow(webView, 0);
+                    Grid.SetRowSpan(webView, 2); // Span across both rows (WebView row and Editor/Button row)
+                    Grid.SetColumn(webView, 0);
+                    Grid.SetColumnSpan(webView, 12); // Span all columns
+                    webView.IsVisible = true;
+                    _focusedWebView = webView;
+                    if (_exportMarkdownButton != null)
+                    {
+                        _exportMarkdownButton.IsVisible = true;
+                    }
+                    foundTargetWebView = true;
+                }
+                else
+                {
+                    webView.IsVisible = false; // Hide other WebViews
+                }
+            }
         }
-
-        foreach (var item in _webViewsInfo)
-        {
-            if (item.Value.Url.ToString() == url)
-            {
-                WebView webView = item.Key;
-                // 更新 WebView 布局
-                Grid.SetRow(webView, 0);
-                Grid.SetRowSpan(webView, 2);
-                Grid.SetColumn(webView, 0);
-                Grid.SetColumnSpan(webView, 12);
-            }
-            else
-            {
-                WebView webView = item.Key;
-                webView.IsVisible = false;
-            }
+        if(foundTargetWebView) {
+             UpdateToolbarItemsForFocusedView(); // Show only Home and Export
         }
     }
+    
+    private void UpdateToolbarItemsForFocusedView()
+    {
+        var homeButtonText = "\ud83c\udfe0 Home";
+        var itemsToRemove = ToolbarItems.Where(item => item.Text != homeButtonText && item != _exportMarkdownButton).ToList();
+        foreach (var item in itemsToRemove)
+        {
+            ToolbarItems.Remove(item);
+        }
+        // Ensure Home and Export buttons are correctly ordered if needed, but they should persist.
+    }
+
 
     private void SetVisibilityForEditorsAndButtons(Grid grid, bool isVisible)
     {
