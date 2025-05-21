@@ -61,6 +61,8 @@
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)"/>
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)"/>
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0"/>
+        <PackageReference Include="ReverseMarkdown" Version="3.2.0" />
+        <PackageReference Include="CommunityToolkit.Maui" Version="7.0.1" />
     </ItemGroup>
 
 </Project>
