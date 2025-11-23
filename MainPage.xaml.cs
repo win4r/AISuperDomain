@@ -29,6 +29,9 @@ public partial class MainPage
 
     private Dictionary<WebView, (string Url, int Row, int Column, int ColumnSpan)> _webViewsInfo = new();
 
+    // Cache for AI config lookups - O(1) instead of O(n)
+    private Dictionary<int, AiConfig> _aiConfigCache = new();
+
     private WebView _focusedWebView;
     private ToolbarItem _exportMarkdownButton;
 
@@ -303,6 +306,13 @@ public partial class MainPage
             return;
         }
         _configuration = configuration;
+
+        // Populate AI config cache for O(1) lookups
+        _aiConfigCache.Clear();
+        foreach (var aiConfig in _configuration.AiConfig)
+        {
+            _aiConfigCache[aiConfig.Id] = aiConfig;
+        }
 
         _grid = new Grid
         {
@@ -626,12 +636,11 @@ public partial class MainPage
 
         string userInput = EscapeJavaScriptString(_editor.Text);
 
-        // 遍历 CurrentAi 列表
+        // 遍历 CurrentAi 列表 - Optimized with O(1) dictionary lookup
         foreach (var currentAi in _configuration.CurrentAi)
         {
-            var aiConfig = _configuration.AiConfig.FirstOrDefault(ai => ai.Id == currentAi.Id);
-
-            if (aiConfig != null && !string.IsNullOrEmpty(aiConfig.Script))
+            // Use cached dictionary for O(1) lookup instead of O(n) FirstOrDefault
+            if (_aiConfigCache.TryGetValue(currentAi.Id, out var aiConfig) && !string.IsNullOrEmpty(aiConfig.Script))
             {
                 // 替换 script 中的占位符 "[message]" 为用户输入的文本
                 string scriptToExecute = aiConfig.Script.Replace("[message]", userInput);
@@ -706,8 +715,8 @@ public partial class MainPage
         for (int i = start; i < end; i++)
         {
             var currentAi = _configuration.CurrentAi[i];
-            var aiConfig = _configuration.AiConfig.FirstOrDefault(ai => ai.Id == currentAi.Id);
-            if (aiConfig != null)
+            // Use cached dictionary for O(1) lookup
+            if (_aiConfigCache.TryGetValue(currentAi.Id, out var aiConfig))
             {
                 // 创建并添加新的ToolbarItem
                 ToolbarItems.Add(new ToolbarItem
