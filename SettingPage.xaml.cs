@@ -86,12 +86,34 @@ public partial class SettingPage
     private void LoadAiConfigs()
     {
         // 使用 _appConfiguration 中的数据填充UI
-        AiConfigsCollectionView.ItemsSource = _appConfiguration.AiConfig.Select(aiConfig => new SelectableAiConfig
+        AiConfigsCollectionView.ItemsSource = _appConfiguration.AiConfig.Select(aiConfig =>
         {
-            Id = aiConfig.Id,
-            Name = aiConfig.Name,
-            IsSelected = _appConfiguration.CurrentAi.Any(cai => cai.Id == aiConfig.Id)
+            var currentAi = _appConfiguration.CurrentAi.FirstOrDefault(cai => cai.Id == aiConfig.Id);
+            return new SelectableAiConfig
+            {
+                Id = aiConfig.Id,
+                Name = aiConfig.Name,
+                IsSelected = currentAi != null,
+                IsFavorite = currentAi?.IsFavorite ?? false
+            };
         }).ToList();
+
+        // Also populate the selected AI configs with favorites status
+        _selectedAiConfigs.Clear();
+        foreach (var aiConfig in _appConfiguration.AiConfig)
+        {
+            var currentAi = _appConfiguration.CurrentAi.FirstOrDefault(cai => cai.Id == aiConfig.Id);
+            if (currentAi != null)
+            {
+                _selectedAiConfigs.Add(new SelectableAiConfig
+                {
+                    Id = aiConfig.Id,
+                    Name = aiConfig.Name,
+                    IsSelected = true,
+                    IsFavorite = currentAi.IsFavorite
+                });
+            }
+        }
     }
 
     private Task DisplayAlertAsync(string title, string message, string cancel)
@@ -110,6 +132,9 @@ public partial class SettingPage
                 // 如果CheckBox被选中，则将对应的配置添加到第二个CollectionView中
                 if (!_selectedAiConfigs.Any(x => x.Id == selectableAiConfig.Id))
                 {
+                    // Copy the IsFavorite status from existing CurrentAi if it exists
+                    var existingCurrentAi = _appConfiguration.CurrentAi.FirstOrDefault(cai => cai.Id == selectableAiConfig.Id);
+                    selectableAiConfig.IsFavorite = existingCurrentAi?.IsFavorite ?? false;
                     _selectedAiConfigs.Add(selectableAiConfig);
                 }
             }
@@ -124,17 +149,40 @@ public partial class SettingPage
             }
         }
     }
+
+    private void FavoriteButton_Clicked(object sender, EventArgs e)
+    {
+        var button = sender as Button;
+        var selectableAiConfig = button?.BindingContext as SelectableAiConfig;
+        if (selectableAiConfig != null)
+        {
+            // Toggle favorite status
+            selectableAiConfig.IsFavorite = !selectableAiConfig.IsFavorite;
+
+            // Refresh the collection to update the UI
+            var index = _selectedAiConfigs.IndexOf(selectableAiConfig);
+            if (index >= 0)
+            {
+                _selectedAiConfigs.RemoveAt(index);
+                _selectedAiConfigs.Insert(index, selectableAiConfig);
+            }
+        }
+    }
     
     private async void SaveButton_Clicked(object sender, EventArgs e)
     {
-        // 更新CurrentAi
+        // 更新CurrentAi with favorites
         _appConfiguration.CurrentAi.Clear();
         foreach (var selectedItem in _selectedAiConfigs.Where(ai => ai.IsSelected))
         {
             var matchingAiConfig = _appConfiguration.AiConfig.FirstOrDefault(ai => ai.Name == selectedItem.Name);
             if (matchingAiConfig != null)
             {
-                _appConfiguration.CurrentAi.Add(new CurrentAi { Id = matchingAiConfig.Id });
+                _appConfiguration.CurrentAi.Add(new CurrentAi
+                {
+                    Id = matchingAiConfig.Id,
+                    IsFavorite = selectedItem.IsFavorite
+                });
             }
         }
 
@@ -160,6 +208,8 @@ public partial class SettingPage
 public class SelectableAiConfig : AiConfig
 {
     public bool IsSelected { get; set; }
+    public bool IsFavorite { get; set; }
+    public string FavoriteIcon => IsFavorite ? "\u2b50" : "\u2606"; // ⭐ or ☆
 }
 
 public class NumberItem

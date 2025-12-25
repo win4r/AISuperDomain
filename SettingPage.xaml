@@ -32,12 +32,18 @@
 
                 <!-- 第二个CollectionView及其说明 -->
                 <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center">
-                    <Label Text="Your AI Selections" HorizontalOptions="Start"/>
+                    <Label Text="Your AI Selections (tap star to favorite)" HorizontalOptions="Start"/>
                     <BoxView HeightRequest="2" Color="BlueViolet" HorizontalOptions="Fill" Margin="0,10,0,10"/> <!-- 分隔线 -->
                     <CollectionView x:Name="SelectedAiConfigsCollectionView" WidthRequest="300" HeightRequest="600">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <HorizontalStackLayout HeightRequest="50" HorizontalOptions="Center">
+                                <HorizontalStackLayout HeightRequest="50" HorizontalOptions="Start" Spacing="10">
+                                    <Button Text="{Binding FavoriteIcon}"
+                                            WidthRequest="40"
+                                            HeightRequest="40"
+                                            BackgroundColor="Transparent"
+                                            FontSize="20"
+                                            Clicked="FavoriteButton_Clicked"/>
                                     <Label Text="{Binding Name}" VerticalOptions="Center" HeightRequest="50"/>
                                 </HorizontalStackLayout>
                             </DataTemplate>

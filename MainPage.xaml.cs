@@ -31,6 +31,8 @@ public partial class MainPage
 
     private WebView _focusedWebView;
     private ToolbarItem _exportMarkdownButton;
+    private ToolbarItem _favoritesButton;
+    private bool _showFavoritesOnly = false;
 
     // 添加 Editor 到第二行的前10列
     private Editor _editor = new Editor
@@ -109,6 +111,34 @@ public partial class MainPage
         {
             ToolbarItems.Insert(1, _exportMarkdownButton);
         }
+
+        // Favorites Button
+        _favoritesButton = new ToolbarItem
+        {
+            Text = _showFavoritesOnly ? "\u2b50 All AIs" : "\u2b50 Favorites",
+            Order = ToolbarItemOrder.Primary,
+            Priority = 2
+        };
+        _favoritesButton.Clicked += OnFavoritesClicked;
+
+        if (!ToolbarItems.Contains(_favoritesButton))
+        {
+            ToolbarItems.Insert(2, _favoritesButton);
+        }
+    }
+
+    private void OnFavoritesClicked(object? sender, EventArgs e)
+    {
+        _showFavoritesOnly = !_showFavoritesOnly;
+        _favoritesButton.Text = _showFavoritesOnly ? "\u2b50 All AIs" : "\u2b50 Favorites";
+        _currentGroupIndex = 0; // Reset to first group when switching view mode
+
+        // Reinitialize the page content with the new filter
+        if (this.Content is Layout layout)
+        {
+            layout.Children.Clear();
+        }
+        InitializePageContent();
     }
     
     private async void OnExportToMarkdownClicked(object sender, EventArgs e)
@@ -316,7 +346,12 @@ public partial class MainPage
         
         _webViewsToAdd = new List<(string url, int row, int column, int columnSpan)>();
 
-        int currentAiCount = _configuration.CurrentAi.Count;
+        // Filter CurrentAi based on favorites mode
+        var activeAiList = _showFavoritesOnly
+            ? _configuration.CurrentAi.Where(ai => ai.IsFavorite).ToList()
+            : _configuration.CurrentAi;
+
+        int currentAiCount = activeAiList.Count;
 
         _viewsCount = _configuration.ViewsCount.VCount;
 
@@ -325,7 +360,7 @@ public partial class MainPage
         {
             for (int i = 0; i < currentAiCount; i++)
             {
-                var currentAi = _configuration.CurrentAi[i];
+                var currentAi = activeAiList.ElementAt(i);
                 var aiConfig = _configuration.AiConfig.FirstOrDefault(ai => ai.Id == currentAi.Id);
                 if (aiConfig != null)
                 {
@@ -354,7 +389,7 @@ public partial class MainPage
         {
             for (int i = 0; i < currentAiCount; i++)
             {
-                var currentAi = _configuration.CurrentAi[i];
+                var currentAi = activeAiList.ElementAt(i);
                 var aiConfig = _configuration.AiConfig.FirstOrDefault(ai => ai.Id == currentAi.Id);
                 if (aiConfig != null)
                 {
@@ -390,7 +425,7 @@ public partial class MainPage
         {
             for (int i = 0; i < currentAiCount; i++)
             {
-                var currentAi = _configuration.CurrentAi[i];
+                var currentAi = activeAiList.ElementAt(i);
                 var aiConfig = _configuration.AiConfig.FirstOrDefault(ai => ai.Id == currentAi.Id);
                 if (aiConfig != null)
                 {
@@ -433,7 +468,7 @@ public partial class MainPage
         {
             for (int i = 0; i < currentAiCount; i++)
             {
-                var currentAi = _configuration.CurrentAi[i];
+                var currentAi = activeAiList.ElementAt(i);
                 var aiConfig = _configuration.AiConfig.FirstOrDefault(ai => ai.Id == currentAi.Id);
                 if (aiConfig != null)
                 {
@@ -477,7 +512,7 @@ public partial class MainPage
         {
             for (int i = 0; i < currentAiCount; i++)
             {
-                var currentAi = _configuration.CurrentAi[i];
+                var currentAi = activeAiList.ElementAt(i);
                 var aiConfig = _configuration.AiConfig.FirstOrDefault(ai => ai.Id == currentAi.Id);
                 if (aiConfig != null)
                 {
@@ -682,13 +717,17 @@ public partial class MainPage
         // 首先清除现有的 ToolbarItems
         ToolbarItems.Clear();
 
+        // Filter CurrentAi based on favorites mode for toolbar display
+        var activeAiList = _showFavoritesOnly
+            ? _configuration.CurrentAi.Where(ai => ai.IsFavorite).ToList()
+            : _configuration.CurrentAi;
+
         // 动态计算基于 viewsCount 的当前组的 WebView 范围
         int groupSize = _viewsCount; // 使用当前的viewsCount确定每组的大小
         int start = _currentGroupIndex * groupSize;
-        int end = Math.Min(start + groupSize, _configuration.CurrentAi.Count);
+        int end = Math.Min(start + groupSize, activeAiList.Count);
 
-        //
-        // // 创建并添加新的ToolbarItem
+        // Home Button
         var toolbarItem = new ToolbarItem
         {
             Text = "\ud83c\udfe0 Home", // 显示名称
@@ -702,17 +741,27 @@ public partial class MainPage
 
         ToolbarItems.Add(toolbarItem);
 
+        // Favorites Button
+        var favoritesItem = new ToolbarItem
+        {
+            Text = _showFavoritesOnly ? "\u2b50 All AIs" : "\u2b50 Favorites"
+        };
+        favoritesItem.Clicked += OnFavoritesClicked;
+        ToolbarItems.Add(favoritesItem);
+
         // 为当前组的每个 WebView 添加 ToolbarItem
         for (int i = start; i < end; i++)
         {
-            var currentAi = _configuration.CurrentAi[i];
+            var currentAi = activeAiList.ElementAt(i);
             var aiConfig = _configuration.AiConfig.FirstOrDefault(ai => ai.Id == currentAi.Id);
             if (aiConfig != null)
             {
+                // Show star for favorites, green circle for non-favorites
+                string indicator = currentAi.IsFavorite ? "\u2b50" : "\ud83d\udfe2";
                 // 创建并添加新的ToolbarItem
                 ToolbarItems.Add(new ToolbarItem
                 {
-                    Text = "\ud83d\udfe2" + aiConfig.Name, // 显示AI配置的名称
+                    Text = indicator + aiConfig.Name, // 显示AI配置的名称
                     Command = new Command(() => ExecuteLoadWebViewCommand(aiConfig.Url))
                 });
             }
@@ -871,7 +920,12 @@ public partial class MainPage
     {
         int numberOfGroups;
 
-        int numberOfWebViews = _configuration.CurrentAi.Count;
+        // Use filtered list based on favorites mode
+        var activeAiList = _showFavoritesOnly
+            ? _configuration.CurrentAi.Where(ai => ai.IsFavorite).ToList()
+            : _configuration.CurrentAi;
+
+        int numberOfWebViews = activeAiList.Count;
 
         // 根据viewsCount计算组数
         if (_viewsCount == 1)
@@ -901,7 +955,7 @@ public partial class MainPage
         }
 
         // 递增当前组索引，如果超过最后一组，则重置为第一组
-        _currentGroupIndex = (_currentGroupIndex + 1) % numberOfGroups;
+        _currentGroupIndex = (_currentGroupIndex + 1) % (numberOfGroups > 0 ? numberOfGroups : 1);
 
         UpdateWebViewVisibility();
         UpdateToolbarItemsForCurrentGroup();
