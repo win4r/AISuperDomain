@@ -3,3 +3,8 @@ obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+
+# Test files
+test*.json
+buglog.html
+*.log
