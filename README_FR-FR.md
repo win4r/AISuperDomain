@@ -1,4 +1,4 @@
-[Profil Bilibili](https://space.bilibili.com/3493277319825652)
+# [🚀观看我的哔哩哔哩视频](https://b23.tv/B1OXY2V)
 
 <div align="center">
   <p><strong>Interagissez avec chaque IA leader en une fois, découvrez les insights ultimes</strong></p>
