@@ -1,4 +1,4 @@
-[哔哩哔哩主页](https://space.bilibili.com/3493277319825652)
+# [🚀观看我的哔哩哔哩视频](https://b23.tv/B1OXY2V)
 
 <div align="center">
   <p><strong>一次提问，多个AI同时回答</strong></p>
@@ -11,7 +11,6 @@
 
 ![图片](https://github.com/win4r/AISuperDomain/assets/42172631/2115997d-8b00-4767-bf79-103b4e53abc3)
 
-### 🔥视频演示：https://b23.tv/B1OXY2V
 
 # AI超元域桌面应用
 
