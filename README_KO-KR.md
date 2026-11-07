@@ -1,4 +1,4 @@
-[Bilibili 프로필](https://space.bilibili.com/3493277319825652)
+# [🚀观看我的哔哩哔哩视频](https://b23.tv/B1OXY2V)
 
 <div align="center">
   <p><strong>모든 주요 AI와 한 번에 접속하여 최종 통찰을 밝혀내다</strong></p>
