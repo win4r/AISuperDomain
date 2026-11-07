@@ -1,3 +1,5 @@
+[Bilibiliプロフィール](https://space.bilibili.com/3493277319825652)
+
 <div align="center">
   <p><strong>一度にすべての主要なAIと対話し、究極の洞察を明らかにする</strong></p>
 

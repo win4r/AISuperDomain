@@ -1,3 +1,5 @@
+[Profil Bilibili](https://space.bilibili.com/3493277319825652)
+
 <div align="center">
   <p><strong>Interagissez avec chaque IA leader en une fois, découvrez les insights ultimes</strong></p>
 
