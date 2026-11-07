@@ -1,4 +1,4 @@
-[Bilibiliプロフィール](https://space.bilibili.com/3493277319825652)
+# [🚀观看我的哔哩哔哩视频](https://b23.tv/B1OXY2V)
 
 <div align="center">
   <p><strong>一度にすべての主要なAIと対話し、究極の洞察を明らかにする</strong></p>
