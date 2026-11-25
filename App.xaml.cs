@@ -6,9 +6,10 @@ public partial class App : Application
     {
         InitializeComponent();
 
+        // Initialize configuration asynchronously without blocking UI thread
         var configurationManager = new ConfigurationManager();
-        Task.Run(async () => await configurationManager.InitializeDefaultConfigurationAsync()).Wait();
-        
+        _ = InitializeAsync(configurationManager);
+
         // //测试删除配置文件
         // var filePath = Path.Combine(FileSystem.AppDataDirectory, "config.txt");
         //
@@ -36,5 +37,10 @@ public partial class App : Application
         
         MainPage = new AppShell();
         // MainPage = new NavigationPage(new MainPage());
+    }
+
+    private async Task InitializeAsync(ConfigurationManager configurationManager)
+    {
+        await configurationManager.InitializeDefaultConfigurationAsync();
     }
 }

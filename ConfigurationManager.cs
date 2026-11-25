@@ -7,8 +7,13 @@ public class ConfigurationManager
     public delegate Task DisplayAlertDelegate(string title, string message, string cancel);
 
     public DisplayAlertDelegate OnDisplayAlertRequested;
-    
-    
+
+    // Add caching for configuration
+    private AppConfiguration? _cachedConfiguration;
+    private DateTime? _lastLoadTime;
+    private const int CacheExpirationMinutes = 5; // Cache expires after 5 minutes
+
+
     public async Task InitializeDefaultConfigurationAsync()
     {
         var filePath = Path.Combine(FileSystem.AppDataDirectory, "config.txt");
@@ -351,6 +356,16 @@ public class ConfigurationManager
 
     public async Task<AppConfiguration?> LoadConfigurationAsync()
     {
+        // Return cached configuration if valid
+        if (_cachedConfiguration != null && _lastLoadTime.HasValue)
+        {
+            var cacheAge = DateTime.Now - _lastLoadTime.Value;
+            if (cacheAge.TotalMinutes < CacheExpirationMinutes)
+            {
+                return _cachedConfiguration;
+            }
+        }
+
         var filePath = Path.Combine(FileSystem.AppDataDirectory, "config.txt");
 
         if (!File.Exists(filePath))
@@ -378,6 +393,12 @@ public class ConfigurationManager
                     await OnDisplayAlertRequested.Invoke("Error", "Failed to deserialize the configuration.", "OK");
                 }
             }
+            else
+            {
+                // Cache the configuration
+                _cachedConfiguration = configuration;
+                _lastLoadTime = DateTime.Now;
+            }
 
             return configuration;
         }
@@ -402,7 +423,7 @@ public class ConfigurationManager
     public async Task SaveConfigurationAsync(AppConfiguration configuration)
     {
         var filePath = Path.Combine(FileSystem.AppDataDirectory, "config.txt");
-        
+
         var options = new JsonSerializerOptions
         {
             WriteIndented = true // 使生成的JSON文件更易于阅读
@@ -412,6 +433,11 @@ public class ConfigurationManager
         try
         {
             await File.WriteAllTextAsync(filePath, jsonContent);
+
+            // Invalidate cache after saving
+            _cachedConfiguration = configuration;
+            _lastLoadTime = DateTime.Now;
+
             if (OnDisplayAlertRequested != null)
             {
                 await OnDisplayAlertRequested.Invoke("Success", "Configuration saved successfully.", "OK");
@@ -424,6 +450,13 @@ public class ConfigurationManager
                 await OnDisplayAlertRequested.Invoke("Error", $"Failed to save configuration: {ex.Message}", "OK");
             }
         }
+    }
+
+    // Method to invalidate the cache
+    public void InvalidateCache()
+    {
+        _cachedConfiguration = null;
+        _lastLoadTime = null;
     }
 
 }
