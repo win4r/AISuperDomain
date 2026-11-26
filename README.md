@@ -1,4 +1,4 @@
-# [🚀观看我的哔哩哔哩视频](https://b23.tv/B1OXY2V)
+# [🚀观看我的哔哩哔哩视频](https://www.bilibili.com/video/BV1gM411L7K3/)
 
 <div align="center">
   <p><strong>Engage with Every Leading AI at Once, Uncover the Ultimate Insights</strong></p>
